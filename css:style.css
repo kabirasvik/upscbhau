@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Current Affairs for UPSC — Exam-Oriented Preparation</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
+:root {
             --bg: #FAFAFA;
             --bg-card: #FFFFFF;
             --bg-card-hover: #FFFDF5;
@@ -31,6 +23,12 @@
             --green: #22C55E;
             --green-bg: #F0FDF4;
             --green-text: #166534;
+            --bg-card-hover: #FFFDF5;
+            --text-muted: #999999;
+            --border-hover: #D4A800;
+            --green: #22C55E;
+            --green-bg: #F0FDF4;
+            --green-text: #166534;
         }
 
         [data-theme="dark"] {
@@ -52,6 +50,12 @@
             --tag-bg: #2A2500;
             --tag-text: #FFE066;
             --toggle-bg: #333333;
+            --green: #4ADE80;
+            --green-bg: #0A1F0D;
+            --green-text: #4ADE80;
+            --bg-card-hover: #1E1C14;
+            --text-muted: #666666;
+            --border-hover: #D4A800;
             --green: #4ADE80;
             --green-bg: #0A1F0D;
             --green-text: #4ADE80;
@@ -675,273 +679,295 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-    </style>
-</head>
-<body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header-inner">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">CA</div>
-                <div class="logo-text">UPSC <span>Notes</span></div>
-            </a>
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
-        </div>
-    </header>
+                /* ===== INDEX PAGE STYLES ===== */
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-badge">📚 Exam-Oriented Preparation</div>
-        <h1>Current Affairs<br>for <span>UPSC</span></h1>
-        <p class="hero-desc">Structured notes &bull; Monthly updates &bull; Concept clarity. Built for serious aspirants who value depth over noise.</p>
-        <div class="hero-exams">
-            <span class="exam-pill">UPSC CSE</span>
-            <span class="exam-pill">CAPF</span>
-            <span class="exam-pill">CDS</span>
-            <span class="exam-pill">EPFO</span>
-        </div>
-    </section>
-
-    <!-- DIVIDER -->
-    <div class="section-divider">
-        <div class="section-divider-inner">
-            <div class="section-divider-line"></div>
-            <span class="section-divider-text">Resources</span>
-            <div class="section-divider-line"></div>
-        </div>
-    </div>
-
-    <!-- CARDS -->
-    <section class="cards-section">
-        <div class="cards-grid">
-
-            <!-- CARD 1: PIB Notes -->
-            <div class="card" id="pibCard">
-                <div class="card-icon">📋</div>
-                <div class="card-body">
-                    <div class="card-header">
-                        <div class="card-title">PIB Notes</div>
-                        <span class="card-status live">● Live</span>
-                    </div>
-                    <p class="card-desc">Monthly PIB compilations with complete fact coverage for Prelims + Mains. Every scheme, policy, exercise & appointment — structured and searchable.</p>
-                    <div class="card-meta">
-                        <div class="card-meta-item">
-                            <div class="card-meta-dot"></div>
-                            Prelims + Mains
-                        </div>
-                        <div class="card-meta-item">
-                            <div class="card-meta-dot"></div>
-                            Topic-wise
-                        </div>
-                        <div class="card-meta-item">
-                            <div class="card-meta-dot"></div>
-                            Searchable
-                        </div>
-                    </div>
-
-                    <!-- Month Quick Nav -->
-                                        <!-- Month Calendar -->
-                    <div class="pib-month-nav">
-                        <div class="pib-month-label">📅 Select Month</div>
-
-                        <div class="pib-year-selector">
-                            <button class="pib-year-btn" onclick="switchPibYear('2025')">2025</button>
-                            <button class="pib-year-btn active" onclick="switchPibYear('2026')">2026</button>
-                        </div>
-
-                        <!-- 2025 -->
-                        <div class="pib-year-panel" id="pib-2025">
-                            <span class="pib-month-btn disabled"><span class="pm-name">Jan</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Feb</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Mar</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Apr</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">May</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Jun</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Jul</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Aug</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Sep</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Oct</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Nov</span><span class="pm-status">Soon</span></span>
-                            <a href="december.html" class="pib-month-btn active"><span class="pm-name">Dec</span><span class="pm-status">● Live</span></a>
-                        </div>
-
-                        <!-- 2026 -->
-                        <div class="pib-year-panel visible" id="pib-2026">
-                            <a href="january.html" class="pib-month-btn active"><span class="pm-name">Jan</span><span class="pm-status">● Live</span></a>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Feb</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Mar</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Apr</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">May</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Jun</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Jul</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Aug</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Sep</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Oct</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Nov</span><span class="pm-status">Soon</span></span>
-                            <span class="pib-month-btn disabled"><span class="pm-name">Dec</span><span class="pm-status">Soon</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </div>
-            </div>
-
-            <!-- CARD 2: Monthly CA -->
-            <div class="card disabled">
-                <div class="card-icon">📰</div>
-                <div class="card-body">
-                    <div class="card-header">
-                        <div class="card-title">Monthly Current Affairs</div>
-                        <span class="card-status soon">Coming Soon</span>
-                    </div>
-                    <p class="card-desc">All-source monthly current affairs compilation — PIB, The Hindu, Indian Express, Rajya Sabha TV & more. One place, zero gaps.</p>
-                    <div class="card-meta">
-                        <div class="card-meta-item">
-                            <div class="card-meta-dot"></div>
-                            All Sources
-                        </div>
-                        <div class="card-meta-item">
-                            <div class="card-meta-dot"></div>
-                            Consolidated
-                        </div>
-                        <div class="card-meta-item">
-                            <div class="card-meta-dot"></div>
-                            Monthly
-                        </div>
-                    </div>
-                </div>
-                <div class="card-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </div>
-            </div>
-
-            <!-- CARD 3: Study Materials -->
-            <div class="card disabled">
-                <div class="card-icon">📖</div>
-                <div class="card-body">
-                    <div class="card-header">
-                        <div class="card-title">Study Materials</div>
-                        <span class="card-status soon">Coming Soon</span>
-                    </div>
-                    <p class="card-desc">Polity, Economy, Environment & Static subject notes. Exam-ready, concise, and built around the UPSC syllabus framework.</p>
-                    <div class="card-meta">
-                        <div class="card-meta-item">
-                            <div class="card-meta-dot"></div>
-                            Polity
-                        </div>
-                        <div class="card-meta-item">
-                            <div class="card-meta-dot"></div>
-                            Economy
-                        </div>
-                        <div class="card-meta-item">
-                            <div class="card-meta-dot"></div>
-                            Environment
-                        </div>
-                        <div class="card-meta-item">
-                            <div class="card-meta-dot"></div>
-                            Static GK
-                        </div>
-                    </div>
-                </div>
-                <div class="card-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- DIVIDER -->
-    <div class="section-divider">
-        <div class="section-divider-inner">
-            <div class="section-divider-line"></div>
-            <span class="section-divider-text">Why This Platform</span>
-            <div class="section-divider-line"></div>
-        </div>
-    </div>
-
-    <!-- FEATURES -->
-    <section class="features-section" style="padding-top: 28px;">
-        <div class="features-grid">
-            <div class="feature-item">
-                <div class="feature-icon">🎯</div>
-                <div class="feature-text">
-                    <div class="feature-title">Exam Focused</div>
-                    <p class="feature-desc">Every fact mapped to Prelims &amp; Mains relevance</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🔍</div>
-                <div class="feature-text">
-                    <div class="feature-title">Searchable</div>
-                    <p class="feature-desc">Find any topic instantly across all months</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🌙</div>
-                <div class="feature-text">
-                    <div class="feature-title">Dark Mode</div>
-                    <p class="feature-desc">Comfortable reading during late-night revision</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">📱</div>
-                <div class="feature-text">
-                    <div class="feature-title">Mobile First</div>
-                    <p class="feature-desc">Optimized for phone reading on the go</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🚫</div>
-                <div class="feature-text">
-                    <div class="feature-title">No Distractions</div>
-                    <p class="feature-desc">No ads, no pop-ups, no sign-ups required</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">♻️</div>
-                <div class="feature-text">
-                    <div class="feature-title">Always Updated</div>
-                    <p class="feature-desc">New months added as soon as PIB releases</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p><strong>Designed for serious aspirants</strong> · No distractions</p>
-        <p style="margin-top: 6px;">Current Affairs for UPSC · PIB Monthly Digest</p>
-        <p style="margin-top: 4px; opacity: 0.5;">Open source · Free forever</p>
-    </footer>
-
-    <!-- SCRIPT -->
-    <script>
-        function toggleTheme() {
-            const html = document.documentElement;
-            const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('pib-theme', next);
+        .hero-desc {
+            color: var(--text-secondary);
+            font-size: 15px;
+            max-width: 520px;
+            margin: 0 auto 8px;
+            line-height: 1.65;
         }
 
-        (function () {
-            const saved = localStorage.getItem('pib-theme');
-            if (saved) document.documentElement.setAttribute('data-theme', saved);
-        })();
-                // PIB Year Switcher
-        function switchPibYear(year) {
-            document.querySelectorAll('.pib-year-panel').forEach(p => {
-                p.classList.remove('visible');
-            });
-            document.querySelectorAll('.pib-year-btn').forEach(b => {
-                b.classList.remove('active');
-            });
-            document.getElementById('pib-' + year).classList.add('visible');
-            event.target.classList.add('active');
+        .hero-exams {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 18px;
         }
-    </script>
 
-</body>
-</html>
+        .exam-pill {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            letter-spacing: 0.3px;
+        }
+
+        .section-divider {
+            max-width: 900px;
+            margin: 32px auto 0;
+            padding: 0 24px;
+        }
+
+        .section-divider-inner {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .section-divider-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .section-divider-text {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .cards-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 28px 24px 40px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 26px;
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 0.5s ease both;
+        }
+
+        .card:nth-child(2) { animation-delay: 0.1s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+
+        .card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-hover);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        .card.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+
+        .card.disabled:hover {
+            transform: none;
+            box-shadow: var(--shadow);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: var(--accent-light);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            transition: background 0.2s;
+        }
+
+        .card:hover .card-icon {
+            background: var(--accent);
+        }
+
+        .card-body {
+            flex: 1;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+
+        .card-title {
+            font-family: 'Merriweather', serif;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .card-status {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .card-status.live {
+            background: var(--green-bg);
+            color: var(--green-text);
+        }
+
+        .card-status.soon {
+            background: var(--accent-light);
+            color: var(--tag-text);
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .card-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .card-meta-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-mid);
+        }
+
+        .card-arrow {
+            align-self: center;
+            color: var(--text-muted);
+            transition: color 0.2s, transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card:hover .card-arrow {
+            color: var(--accent-dark);
+            transform: translateX(3px);
+        }
+
+        .pib-month-nav {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .features-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 48px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px 14px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .feature-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .feature-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .footer strong {
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 600px) {
+            .cards-section {
+                padding: 20px 16px 32px;
+            }
+
+            .card {
+                padding: 22px 18px;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .card-arrow {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .feature-item {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                text-align: left;
+                padding: 14px 16px;
+            }
+
+            .feature-icon {
+                margin-bottom: 0;
+                font-size: 20px;
+            }
+
+            .feature-text {
+                flex: 1;
+            }
+
+            .feature-desc {
+                display: none;
+            }
+        }
