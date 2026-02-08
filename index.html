@@ -398,58 +398,155 @@
         }
 
         /* ===== MONTH QUICK NAV (inside PIB card) ===== */
-        .month-quick {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin-top: 14px;
-            padding-top: 14px;
+        
+
+        .month-group-label:first-child {
+            margin-top: 0;
+        }
+
+        /* ===== MONTH CALENDAR (in PIB card) ===== */
+        .pib-month-nav {
+            margin-top: 16px;
+            padding-top: 16px;
             border-top: 1px solid var(--border);
         }
 
-        .month-chip {
-            font-size: 12px;
+        .pib-month-label {
+            font-size: 11px;
             font-weight: 600;
-            padding: 5px 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .pib-year-selector {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .pib-year-btn {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 18px;
             border-radius: 8px;
             border: 1px solid var(--border);
             background: var(--bg);
             color: var(--text-secondary);
-            text-decoration: none;
+            cursor: pointer;
             transition: all 0.2s;
-            white-space: nowrap;
         }
 
-        .month-chip:hover {
+        .pib-year-btn:hover {
             border-color: var(--accent);
             background: var(--accent-light);
-            color: var(--accent-deep);
         }
 
-        .month-chip.active {
+        .pib-year-btn.active {
             background: var(--accent);
             border-color: var(--accent);
             color: #1A1A1A;
+            box-shadow: 0 2px 8px rgba(245,197,24,0.3);
         }
 
-        .month-chip.disabled {
+        .pib-year-panel {
+            display: none;
+        }
+
+        .pib-year-panel.visible {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .pib-month-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 4px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .pib-month-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .pib-month-btn.active {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: #1A1A1A;
+            box-shadow: 0 2px 8px rgba(245,197,24,0.3);
+        }
+
+        .pib-month-btn.done {
+            border-color: var(--accent-mid);
+            background: var(--accent-light);
+        }
+
+        .pib-month-btn.disabled {
             opacity: 0.35;
             pointer-events: none;
+            cursor: not-allowed;
         }
 
-        .month-group-label {
-            font-size: 10px;
-            font-weight: 700;
+        .pib-month-btn .pm-name {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .pib-month-btn .pm-status {
+            font-size: 8px;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: var(--text-muted);
-            width: 100%;
-            margin-top: 6px;
-            margin-bottom: 2px;
+            letter-spacing: 0.4px;
+            margin-top: 2px;
+            opacity: 0.7;
         }
 
-        .month-group-label:first-child {
-            margin-top: 0;
+        .pib-month-btn.active .pm-status {
+            opacity: 1;
+        }
+
+        .pib-month-btn.done .pm-status {
+            color: var(--accent-deep);
+        }
+
+        [data-theme="dark"] .pib-month-btn.done .pm-status {
+            color: var(--accent-mid);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .pib-year-panel.visible {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .pib-month-btn {
+                padding: 7px 2px;
+            }
+
+            .pib-month-btn .pm-name {
+                font-size: 11px;
+            }
         }
 
         /* ===== FEATURES ===== */
@@ -644,34 +741,46 @@
                     </div>
 
                     <!-- Month Quick Nav -->
-                    <div class="month-quick">
-                        <div class="month-group-label">2025</div>
-                        <a href="december.html" class="month-chip active">Dec 2025</a>
-                        <span class="month-chip disabled">Nov</span>
-                        <span class="month-chip disabled">Oct</span>
-                        <span class="month-chip disabled">Sep</span>
-                        <span class="month-chip disabled">Aug</span>
-                        <span class="month-chip disabled">Jul</span>
-                        <span class="month-chip disabled">Jun</span>
-                        <span class="month-chip disabled">May</span>
-                        <span class="month-chip disabled">Apr</span>
-                        <span class="month-chip disabled">Mar</span>
-                        <span class="month-chip disabled">Feb</span>
-                        <span class="month-chip disabled">Jan</span>
+                                        <!-- Month Calendar -->
+                    <div class="pib-month-nav">
+                        <div class="pib-month-label">📅 Select Month</div>
 
-                        <div class="month-group-label">2026</div>
-                       <a href="january.html" class="month-chip active">Jan 2026</a>
-                        <span class="month-chip disabled">Feb</span>
-                        <span class="month-chip disabled">Mar</span>
-                        <span class="month-chip disabled">Apr</span>
-                        <span class="month-chip disabled">May</span>
-                        <span class="month-chip disabled">Jun</span>
-                        <span class="month-chip disabled">Jul</span>
-                        <span class="month-chip disabled">Aug</span>
-                        <span class="month-chip disabled">Sep</span>
-                        <span class="month-chip disabled">Oct</span>
-                        <span class="month-chip disabled">Nov</span>
-                        <span class="month-chip disabled">Dec</span>
+                        <div class="pib-year-selector">
+                            <button class="pib-year-btn" onclick="switchPibYear('2025')">2025</button>
+                            <button class="pib-year-btn active" onclick="switchPibYear('2026')">2026</button>
+                        </div>
+
+                        <!-- 2025 -->
+                        <div class="pib-year-panel" id="pib-2025">
+                            <span class="pib-month-btn disabled"><span class="pm-name">Jan</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Feb</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Mar</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Apr</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">May</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Jun</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Jul</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Aug</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Sep</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Oct</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Nov</span><span class="pm-status">Soon</span></span>
+                            <a href="december.html" class="pib-month-btn active"><span class="pm-name">Dec</span><span class="pm-status">● Live</span></a>
+                        </div>
+
+                        <!-- 2026 -->
+                        <div class="pib-year-panel visible" id="pib-2026">
+                            <a href="january.html" class="pib-month-btn active"><span class="pm-name">Jan</span><span class="pm-status">● Live</span></a>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Feb</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Mar</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Apr</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">May</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Jun</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Jul</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Aug</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Sep</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Oct</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Nov</span><span class="pm-status">Soon</span></span>
+                            <span class="pib-month-btn disabled"><span class="pm-name">Dec</span><span class="pm-status">Soon</span></span>
+                        </div>
                     </div>
                 </div>
                 <div class="card-arrow">
@@ -821,6 +930,17 @@
             const saved = localStorage.getItem('pib-theme');
             if (saved) document.documentElement.setAttribute('data-theme', saved);
         })();
+                // PIB Year Switcher
+        function switchPibYear(year) {
+            document.querySelectorAll('.pib-year-panel').forEach(p => {
+                p.classList.remove('visible');
+            });
+            document.querySelectorAll('.pib-year-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            document.getElementById('pib-' + year).classList.add('visible');
+            event.target.classList.add('active');
+        }
     </script>
 
 </body>
