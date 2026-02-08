@@ -1,0 +1,2513 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIB Monthly Digest — December 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --bg-card: #FFFFFF;
+            --bg-dropdown: #FFFDF5;
+            --text: #1A1A1A;
+            --text-secondary: #555555;
+            --border: #E8E8E8;
+            --accent: #F5C518;
+            --accent-light: #FFF8DC;
+            --accent-mid: #FFE066;
+            --accent-dark: #D4A800;
+            --accent-deep: #8B7500;
+            --shadow: 0 2px 12px rgba(0,0,0,0.06);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.1);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --tag-bg: #FFF8DC;
+            --tag-text: #8B7500;
+            --icon-bg: #FFF3B0;
+            --toggle-bg: #E8E8E8;
+        }
+
+        [data-theme="dark"] {
+            --bg: #111111;
+            --bg-card: #1A1A1A;
+            --bg-dropdown: #222222;
+            --text: #F0F0F0;
+            --text-secondary: #AAAAAA;
+            --border: #333333;
+            --accent: #F5C518;
+            --accent-light: #3D3500;
+            --accent-mid: #6B5E00;
+            --accent-dark: #FFD43B;
+            --accent-deep: #FFE066;
+            --shadow: 0 2px 12px rgba(0,0,0,0.3);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.4);
+            --tag-bg: #2A2500;
+            --tag-text: #FFE066;
+            --icon-bg: #2A2500;
+            --toggle-bg: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            transition: background 0.3s, color 0.3s;
+            min-height: 100vh;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            transition: background 0.3s;
+        }
+
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1A1A1A;
+            box-shadow: 0 2px 8px rgba(245,197,24,0.3);
+        }
+
+        .logo-text {
+            font-family: 'Merriweather', serif;
+            font-weight: 900;
+            font-size: 15px;
+            letter-spacing: -0.5px;
+            white-space: nowrap;
+        }
+
+        .logo-text span {
+            color: var(--accent-dark);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle {
+            width: 52px;
+            height: 28px;
+            background: var(--toggle-bg);
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.3s;
+        }
+
+        .theme-toggle::after {
+            content: '☀️';
+            font-size: 14px;
+            position: absolute;
+            left: 4px;
+            top: 3px;
+            width: 22px;
+            height: 22px;
+            background: var(--bg-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
+
+        [data-theme="dark"] .theme-toggle::after {
+            content: '🌙';
+            transform: translateX(24px);
+        }
+
+        .expand-all-btn {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .expand-all-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent-dark);
+        }
+
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px 32px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent-light);
+            color: var(--tag-text);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-dark);
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* === MONTH NAV === */
+        .month-nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 24px;
+        }
+
+        .month-nav-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .year-selector {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .year-btn {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 22px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .year-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .year-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #1A1A1A;
+            box-shadow: 0 2px 10px rgba(245,197,24,0.3);
+        }
+
+        .year-panel {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .year-panel.visible {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .month-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+        }
+
+        .month-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 4px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .month-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .month-btn.active {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: #1A1A1A;
+            box-shadow: 0 2px 10px rgba(245,197,24,0.3);
+        }
+
+        .month-btn.done {
+            border-color: var(--accent-mid);
+            background: var(--accent-light);
+        }
+
+        .month-btn.disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .month-btn .m-name {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .month-btn .m-status {
+            font-size: 9px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+            opacity: 0.7;
+        }
+
+        .month-btn.active .m-status {
+            opacity: 1;
+        }
+
+        .month-btn.done .m-status {
+            color: var(--accent-deep);
+        }
+
+        [data-theme="dark"] .month-btn.done .m-status {
+            color: var(--accent-mid);
+        }
+
+        @media (max-width: 600px) {
+            .month-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 6px;
+            }
+
+            .month-btn {
+                padding: 8px 2px;
+            }
+
+            .month-btn .m-name {
+                font-size: 12px;
+            }
+
+            .year-btn {
+                padding: 7px 16px;
+                font-size: 13px;
+            }
+        }
+
+        /* === MAIN === */
+        .main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        .topic-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .topic-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .topic-card.open {
+            border-color: var(--accent);
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .topic-header:hover {
+            background: var(--accent-light);
+        }
+
+        .topic-num {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            background: var(--icon-bg);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--accent-deep);
+            transition: background 0.2s;
+        }
+
+        .topic-card.open .topic-num {
+            background: var(--accent);
+            color: #1A1A1A;
+        }
+
+        .topic-title-group {
+            flex: 1;
+        }
+
+        .topic-title {
+            font-family: 'Merriweather', serif;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .topic-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .topic-tag {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .topic-chevron {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+            color: var(--text-secondary);
+        }
+
+        .topic-card.open .topic-chevron {
+            transform: rotate(180deg);
+            color: var(--accent-dark);
+        }
+
+        .topic-chevron svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .topic-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .topic-content-inner {
+            padding: 0 20px 20px;
+            padding-left: 72px;
+        }
+
+        .topic-content ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-content li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        .topic-content li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .topic-content li strong {
+            color: var(--accent-deep);
+            font-weight: 600;
+        }
+
+        [data-theme="dark"] .topic-content li strong {
+            color: var(--accent-dark);
+        }
+
+        .subtopic {
+            margin-top: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: var(--bg-dropdown);
+        }
+
+        .subtopic-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-deep);
+            transition: background 0.2s;
+        }
+
+        [data-theme="dark"] .subtopic-header {
+            color: var(--accent-mid);
+        }
+
+        .subtopic-header:hover {
+            background: var(--accent-light);
+        }
+
+        .subtopic-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-mid);
+            flex-shrink: 0;
+        }
+
+        .subtopic-chevron {
+            margin-left: auto;
+            transition: transform 0.3s;
+            font-size: 12px;
+        }
+
+        .subtopic.open .subtopic-chevron {
+            transform: rotate(180deg);
+        }
+
+        .subtopic-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .subtopic-content-inner {
+            padding: 0 14px 12px 32px;
+        }
+
+        .subtopic-content ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .subtopic-content li {
+            padding-left: 14px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .subtopic-content li::before {
+            width: 5px;
+            height: 5px;
+            top: 8px;
+            background: var(--accent-mid);
+        }
+
+        .search-wrap {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto 32px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px 12px 44px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--bg-card);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(245,197,24,0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 32px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+        @media (max-width: 600px) {
+            .topic-content-inner { padding-left: 20px; }
+            .topic-header { padding: 14px 16px; gap: 10px; }
+            .topic-tag { display: none; }
+        }
+
+        .topic-card {
+            animation: fadeUp 0.4s ease both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icon">PIB</div>
+                <div class="logo-text">Monthly <span>Digest</span></div>
+            </div>
+            <div class="header-controls">
+                <button class="expand-all-btn" id="expandAllBtn" onclick="toggleAll()">Expand All</button>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge">📋 Press Information Bureau</div>
+        <h1>December <span>2025</span></h1>
+        <p>Comprehensive extraction of news &amp; current affairs from the Monthly PIB compilation — 77 topics covered.</p>
+    </section>
+
+    <!-- MONTH NAVIGATION -->
+    <nav class="month-nav">
+        <div class="month-nav-label">📅 Select Month</div>
+        <div class="year-selector">
+            <button class="year-btn active" onclick="switchYear('2025')">2025</button>
+            <button class="year-btn" onclick="switchYear('2026')">2026</button>
+        </div>
+
+        <div class="year-panel visible" id="year-2025">
+            <div class="month-grid">
+                <a href="january-2025.html" class="month-btn disabled"><span class="m-name">Jan</span><span class="m-status">Soon</span></a>
+                <a href="february-2025.html" class="month-btn disabled"><span class="m-name">Feb</span><span class="m-status">Soon</span></a>
+                <a href="march-2025.html" class="month-btn disabled"><span class="m-name">Mar</span><span class="m-status">Soon</span></a>
+                <a href="april-2025.html" class="month-btn disabled"><span class="m-name">Apr</span><span class="m-status">Soon</span></a>
+                <a href="may-2025.html" class="month-btn disabled"><span class="m-name">May</span><span class="m-status">Soon</span></a>
+                <a href="june-2025.html" class="month-btn disabled"><span class="m-name">Jun</span><span class="m-status">Soon</span></a>
+                <a href="july-2025.html" class="month-btn disabled"><span class="m-name">Jul</span><span class="m-status">Soon</span></a>
+                <a href="august-2025.html" class="month-btn disabled"><span class="m-name">Aug</span><span class="m-status">Soon</span></a>
+                <a href="september-2025.html" class="month-btn disabled"><span class="m-name">Sep</span><span class="m-status">Soon</span></a>
+                <a href="october-2025.html" class="month-btn disabled"><span class="m-name">Oct</span><span class="m-status">Soon</span></a>
+                <a href="november-2025.html" class="month-btn disabled"><span class="m-name">Nov</span><span class="m-status">Soon</span></a>
+                <a href="december-2025.html" class="month-btn active"><span class="m-name">Dec</span><span class="m-status">● Live</span></a>
+            </div>
+        </div>
+
+        <div class="year-panel" id="year-2026">
+            <div class="month-grid">
+                <a href="january-2026.html" class="month-btn done"><span class="m-name">Jan</span><span class="m-status">✓ Done</span></a>
+                <a href="february-2026.html" class="month-btn disabled"><span class="m-name">Feb</span><span class="m-status">Soon</span></a>
+                <a href="march-2026.html" class="month-btn disabled"><span class="m-name">Mar</span><span class="m-status">Soon</span></a>
+                <a href="april-2026.html" class="month-btn disabled"><span class="m-name">Apr</span><span class="m-status">Soon</span></a>
+                <a href="may-2026.html" class="month-btn disabled"><span class="m-name">May</span><span class="m-status">Soon</span></a>
+                <a href="june-2026.html" class="month-btn disabled"><span class="m-name">Jun</span><span class="m-status">Soon</span></a>
+                <a href="july-2026.html" class="month-btn disabled"><span class="m-name">Jul</span><span class="m-status">Soon</span></a>
+                <a href="august-2026.html" class="month-btn disabled"><span class="m-name">Aug</span><span class="m-status">Soon</span></a>
+                <a href="september-2026.html" class="month-btn disabled"><span class="m-name">Sep</span><span class="m-status">Soon</span></a>
+                <a href="october-2026.html" class="month-btn disabled"><span class="m-name">Oct</span><span class="m-status">Soon</span></a>
+                <a href="november-2026.html" class="month-btn disabled"><span class="m-name">Nov</span><span class="m-status">Soon</span></a>
+                <a href="december-2026.html" class="month-btn disabled"><span class="m-name">Dec</span><span class="m-status">Soon</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="search-wrap">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search topics…" oninput="searchTopics()" />
+        </div>
+
+        <div id="topicList">
+
+            <!-- 1 -->
+            <div class="topic-card" data-index="1">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">01</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏦 ADB Loan for Development Projects</div>
+                        <div class="topic-subtitle">$800M loans + $1M TA grant for Maharashtra, MP, Gujarat, Assam</div>
+                    </div>
+                    <div class="topic-tag">Economy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Agreement:</strong> GoI and ADB signed loans worth $800 million and a $1 million Technical Assistance (TA) grant.</li>
+                        </ul>
+                        <div class="subtopic">
+                            <div class="subtopic-header" onclick="toggleSubtopic(this)">
+                                <div class="subtopic-dot"></div>
+                                Specific Projects
+                                <span class="subtopic-chevron">▾</span>
+                            </div>
+                            <div class="subtopic-content">
+                                <div class="subtopic-content-inner">
+                                    <ul>
+                                        <li><strong>Maharashtra:</strong> Power Distribution Enhancement for Agricultural Solarization.</li>
+                                        <li><strong>Madhya Pradesh:</strong> Indore Metro Rail Project.</li>
+                                        <li><strong>Gujarat:</strong> Skills Development Programme.</li>
+                                        <li><strong>Assam:</strong> SWIFT Project (TA Grant).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <ul style="margin-top:12px">
+                            <li><strong>About ADB:</strong> HQ in Manila, Philippines. 69 members (Israel is newest). Japan is the largest shareholder.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="topic-card" data-index="2">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">02</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🚢 IMO Council Re-election</div>
+                        <div class="topic-subtitle">India re-elected with highest tally (154/169 votes) in Category B</div>
+                    </div>
+                    <div class="topic-tag">Global</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Achievement:</strong> India re-elected to IMO Council in Category B with highest tally (154 of 169 votes).</li>
+                            <li><strong>Category B:</strong> Represents nations with largest interest in international seaborne trade.</li>
+                            <li><strong>IMO Facts:</strong> HQ in London. Responsible for SOLAS (Safety) and MARPOL (Pollution) conventions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="topic-card" data-index="3">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">03</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">⚖️ 30th NHRC Annual Debate</div>
+                        <div class="topic-subtitle">CISF wins overall trophy — human rights &amp; national security</div>
+                    </div>
+                    <div class="topic-tag">Governance</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Winner:</strong> CISF won the overall trophy as Best Team.</li>
+                            <li><strong>Topic:</strong> "Human rights can be observed by paramilitary forces without compromising national security concerns."</li>
+                            <li><strong>Organizer:</strong> NHRC with SSB.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="topic-card" data-index="4">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">04</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🤲 PM VIKAS Scheme</div>
+                        <div class="topic-subtitle">Pradhan Mantri Virasat Ka Samvardhan — 6 notified minorities</div>
+                    </div>
+                    <div class="topic-tag">Social</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Full Form:</strong> Pradhan Mantri Virasat Ka Samvardhan.</li>
+                            <li><strong>Target:</strong> Socio-economic empowerment of 6 notified minorities (Muslims, Christians, Sikhs, Buddhists, Parsis, Jains).</li>
+                            <li><strong>Key Mandates:</strong> 3% reservation for PwDs. 75% placement target for trainees (50% in organized sector).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="topic-card" data-index="5">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">05</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🧊 NCPOR Silver Jubilee</div>
+                        <div class="topic-subtitle">National Centre for Polar &amp; Ocean Research — 25 years</div>
+                    </div>
+                    <div class="topic-tag">Science</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> NCPOR (Goa) celebrated Silver Jubilee (25th anniversary).</li>
+                            <li><strong>Stations:</strong> Maitri &amp; Bharati (Antarctica), Himadri (Arctic), Himansh (Himalayas).</li>
+                            <li><strong>Parent Body:</strong> Ministry of Earth Sciences (MoES).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="topic-card" data-index="6">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">06</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">⚓ Operation Sagar Bandhu</div>
+                        <div class="topic-subtitle">Indian Navy HADR in Sri Lanka — Cyclone Ditwah</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Action:</strong> Indian Navy conducted HADR in Sri Lanka following Cyclone Ditwah.</li>
+                            <li><strong>Assets Deployed:</strong> INS Vikrant and INS Udaygiri.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="topic-card" data-index="7">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">07</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🤝 Exercise EKUVERIN</div>
+                        <div class="topic-subtitle">14th India-Maldives Joint Military Exercise — Thiruvananthapuram</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Type:</strong> 14th Joint Military Exercise between India and Maldives.</li>
+                            <li><strong>Location:</strong> Thiruvananthapuram, Kerala.</li>
+                            <li><strong>Meaning:</strong> "Ekuverin" means "Friends" in Dhivehi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="topic-card" data-index="8">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">08</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🤖 India-AI Impact Summit 2026</div>
+                        <div class="topic-subtitle">First global AI summit in the Global South — 7 Chakras framework</div>
+                    </div>
+                    <div class="topic-tag">Technology</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Schedule:</strong> Feb 16–20, 2026, New Delhi.</li>
+                            <li><strong>Significance:</strong> First time this global summit is hosted in the Global South.</li>
+                            <li><strong>Theme:</strong> Focused on 7 'Chakras' including Human Capital, Safety, and Democratizing AI Resources.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="topic-card" data-index="9">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">09</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏛️ 20th UNESCO IGC</div>
+                        <div class="topic-subtitle">Intangible Cultural Heritage committee at Red Fort, New Delhi</div>
+                    </div>
+                    <div class="topic-tag">Culture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> 20th Session of UNESCO Intergovernmental Committee for Safeguarding ICH.</li>
+                            <li><strong>Venue:</strong> Red Fort, New Delhi.</li>
+                            <li><strong>Goal:</strong> Examining nominations for the UNESCO ICH Lists.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="topic-card" data-index="10">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">10</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">💻 CHAMPIONS Portal</div>
+                        <div class="topic-subtitle">MSME grievance redressal — integrated with PM Vishwakarma</div>
+                    </div>
+                    <div class="topic-tag">Digital</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Ministry:</strong> MSME.</li>
+                            <li><strong>Purpose:</strong> Digital platform for speedy grievance redressal for MSMEs.</li>
+                            <li><strong>Context:</strong> Integrated with PM Vishwakarma scheme support.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11 -->
+            <div class="topic-card" data-index="11">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">11</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">☢️ Nuclear Energy Mission</div>
+                        <div class="topic-subtitle">100 GW by 2047 — PHWRs, SMRs &amp; Net Zero 2070</div>
+                    </div>
+                    <div class="topic-tag">Energy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Target:</strong> 100 GW nuclear capacity by 2047.</li>
+                            <li><strong>Strategy:</strong> Use of 700 MWe indigenous PHWRs and Small Modular Reactors (SMRs) to replace fossil fuel plants.</li>
+                            <li><strong>Net Zero:</strong> Contributes to the 2070 Net Zero target.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="topic-card" data-index="12">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">12</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🪖 Exercise Garuda Shakti</div>
+                        <div class="topic-subtitle">10th India-Indonesia Joint Special Forces Exercise — Himachal Pradesh</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Type:</strong> 10th Joint Special Forces Exercise between India and Indonesia.</li>
+                            <li><strong>Location:</strong> Himachal Pradesh.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13 -->
+            <div class="topic-card" data-index="13">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">13</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">✈️ Exercise Garuda</div>
+                        <div class="topic-subtitle">8th India-France Bilateral Air Exercise — Su-30MKI participation</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Type:</strong> 8th Bilateral Air Exercise between India and France.</li>
+                            <li><strong>Conclusion:</strong> Concluded in France; IAF participated with Su-30MKI.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14 -->
+            <div class="topic-card" data-index="14">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">14</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">💡 Inno-Yoddha 2025</div>
+                        <div class="topic-subtitle">Indian Army's Idea &amp; Innovation Competition — Manekshaw Centre</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> Indian Army's annual Idea &amp; Innovation Competition.</li>
+                            <li><strong>Venue:</strong> Manekshaw Centre, New Delhi.</li>
+                            <li><strong>Aim:</strong> Promoting indigenous innovation within the force.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 15 -->
+            <div class="topic-card" data-index="15">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">15</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🐅 Exercise Harimau Shakti</div>
+                        <div class="topic-subtitle">5th India-Malaysia Joint Military Exercise — Rajasthan</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Type:</strong> 5th Joint Military Exercise between India and Malaysia.</li>
+                            <li><strong>Location:</strong> Rajasthan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 16 -->
+            <div class="topic-card" data-index="16">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">16</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🦁 WCCB Action</div>
+                        <div class="topic-subtitle">INTERPOL Red Notice arrest — international wildlife crime</div>
+                    </div>
+                    <div class="topic-tag">Law</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Incident:</strong> WCCB and MP Tiger Strike Force arrested Yangchen Lachungpa (INTERPOL Red Notice).</li>
+                            <li><strong>WCCB:</strong> Statutory body under MoEFCC to combat organized wildlife crime.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17 -->
+            <div class="topic-card" data-index="17">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">17</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">⛵ Admiral's Cup 2025</div>
+                        <div class="topic-subtitle">14th naval sailing championship — INA Ezhimala, 35 countries</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> 14th edition of the prestigious naval sailing championship.</li>
+                            <li><strong>Host:</strong> Indian Naval Academy (INA), Ezhimala.</li>
+                            <li><strong>Participants:</strong> 35 countries.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18 -->
+            <div class="topic-card" data-index="18">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">18</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🕌 UMMED Portal</div>
+                        <div class="topic-subtitle">Waqf Property management — upload window closed Dec 6, 2025</div>
+                    </div>
+                    <div class="topic-tag">Governance</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Objective:</strong> Management of Waqf Properties in India.</li>
+                            <li><strong>Status:</strong> Portal officially closed for uploads on Dec 6, 2025, completing the 6-month window.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 19 -->
+            <div class="topic-card" data-index="19">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">19</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🎓 AIESC Meeting</div>
+                        <div class="topic-subtitle">3rd Australia-India Education &amp; Skills Council — New Delhi</div>
+                    </div>
+                    <div class="topic-tag">Education</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> 3rd Australia-India Education and Skills Council meeting.</li>
+                            <li><strong>Venue:</strong> New Delhi.</li>
+                            <li><strong>Focus:</strong> Mutual recognition of qualifications and research cooperation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20 -->
+            <div class="topic-card" data-index="20">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">20</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🌿 2nd WHO Global Summit on Traditional Medicine</div>
+                        <div class="topic-subtitle">Bharat Mandapam — "Restoring balance"</div>
+                    </div>
+                    <div class="topic-tag">Health</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Venue:</strong> Bharat Mandapam, New Delhi (Dec 2025).</li>
+                            <li><strong>Theme:</strong> "Restoring balance: The science and practice of health and well-being".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 21 -->
+            <div class="topic-card" data-index="21">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">21</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📱 UPI Global Recognition</div>
+                        <div class="topic-subtitle">IMF: World's largest real-time retail payment — 49% global share</div>
+                    </div>
+                    <div class="topic-tag">Digital</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Report:</strong> IMF recognized UPI as the world's largest real-time retail payment system.</li>
+                            <li><strong>Market Share:</strong> Accounts for 49% of global real-time transactions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 22 -->
+            <div class="topic-card" data-index="22">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">22</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">💧 Mission PUNARUTTHAN</div>
+                        <div class="topic-subtitle">Nagaland — watershed development, spring revival</div>
+                    </div>
+                    <div class="topic-tag">Environment</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Launch:</strong> Launched in Nagaland (Kohima).</li>
+                            <li><strong>Focus:</strong> Watershed development to revive springs and restore degraded lands.</li>
+                            <li><strong>Slogan:</strong> "Water Security is National Security".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 23 -->
+            <div class="topic-card" data-index="23">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">23</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🌊 Blue Economy</div>
+                        <div class="topic-subtitle">Dr. Jitendra Singh — "new engine of India's growth"</div>
+                    </div>
+                    <div class="topic-tag">Economy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Statement:</strong> Dr. Jitendra Singh at IISF termed Blue Economy as the "new engine of India's growth."</li>
+                            <li><strong>Focus:</strong> Deep-sea minerals and biodiversity.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 24 -->
+            <div class="topic-card" data-index="24">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">24</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🌾 Cotton Production Crisis</div>
+                        <div class="topic-subtitle">Pink Bollworm, Leaf Curl Virus — Mission for Cotton Productivity</div>
+                    </div>
+                    <div class="topic-tag">Agriculture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Issue:</strong> Decline in cotton production/yield.</li>
+                            <li><strong>Causes:</strong> Pink Bollworm infestation, Cotton Leaf Curl Virus, and climate change.</li>
+                            <li><strong>Response:</strong> "Mission for Cotton Productivity" announced.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 25 -->
+            <div class="topic-card" data-index="25">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">25</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🪔 Deepavali as UNESCO ICH</div>
+                        <div class="topic-subtitle">Inscribed on Representative List — "Tamso Ma Jyotirgamaya"</div>
+                    </div>
+                    <div class="topic-tag">Culture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Achievement:</strong> Deepavali inscribed on UNESCO's Representative List of Intangible Cultural Heritage.</li>
+                            <li><strong>Symbolism:</strong> "Tamso Ma Jyotirgamaya" (Darkness to Light).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 26 -->
+            <div class="topic-card" data-index="26">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">26</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📦 Gati Shakti &amp; Amazon MoU</div>
+                        <div class="topic-subtitle">Amazon Chair Professorship at GSV — logistics research</div>
+                    </div>
+                    <div class="topic-tag">Education</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Partnership:</strong> Gati Shakti Vishwavidyalaya (GSV) signed MoU with Amazon.</li>
+                            <li><strong>Key Feature:</strong> Amazon Chair Professorship at GSV for research in warehousing/logistics sector.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 27 -->
+            <div class="topic-card" data-index="27">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">27</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">⚛️ Nuclear Power Status</div>
+                        <div class="topic-subtitle">16 reactors (6380 MW) — KKNPP, Kovvada, Jaitapur projects</div>
+                    </div>
+                    <div class="topic-tag">Energy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Current:</strong> 16 reactors (6380 MW) under IAEA safeguards.</li>
+                        </ul>
+                        <div class="subtopic">
+                            <div class="subtopic-header" onclick="toggleSubtopic(this)">
+                                <div class="subtopic-dot"></div>
+                                Foreign Collaboration Projects
+                                <span class="subtopic-chevron">▾</span>
+                            </div>
+                            <div class="subtopic-content">
+                                <div class="subtopic-content-inner">
+                                    <ul>
+                                        <li><strong>Russia:</strong> KKNPP Units 3-6 (Tamil Nadu).</li>
+                                        <li><strong>USA:</strong> Kovvada (Andhra Pradesh) — discussions.</li>
+                                        <li><strong>France:</strong> Jaitapur (Maharashtra) — discussions.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 28 -->
+            <div class="topic-card" data-index="28">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">28</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🍽️ FICCI Annapoorna 2025</div>
+                        <div class="topic-subtitle">Food Processing Exhibition — PM Kisan Sampada &amp; PMFME</div>
+                    </div>
+                    <div class="topic-tag">Trade</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Sector:</strong> Food Processing.</li>
+                            <li><strong>Venue:</strong> Mumbai.</li>
+                            <li><strong>Focus:</strong> Promoting PM Kisan Sampada Yojana and PMFME schemes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 29 -->
+            <div class="topic-card" data-index="29">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">29</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🗣️ Bharatiya Bhasha Utsav</div>
+                        <div class="topic-subtitle">Adi Vaani — India's first AI tribal language translation app</div>
+                    </div>
+                    <div class="topic-tag">Technology</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> Celebrated on birth anniversary of Mahakavi Subramania Bharati.</li>
+                            <li><strong>Tech Launch:</strong> "Adi Vaani" — India's first AI-powered tribal language translation app (supports Santali, Kui, Bhili, etc.).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 30 -->
+            <div class="topic-card" data-index="30">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">30</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">⛽ Hydrogen Fuel Cell Vessel</div>
+                        <div class="topic-subtitle">India's first indigenous hydrogen fuel cell catamaran — Varanasi</div>
+                    </div>
+                    <div class="topic-tag">Innovation</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Milestone:</strong> India's first indigenous hydrogen fuel cell passenger catamaran flagged off.</li>
+                            <li><strong>Location:</strong> Varanasi (River Ganga).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 31 -->
+            <div class="topic-card" data-index="31">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">31</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📮 India Post &amp; BSE MoU</div>
+                        <div class="topic-subtitle">Post offices as Mutual Fund distributors — financial inclusion</div>
+                    </div>
+                    <div class="topic-tag">Economy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Agreement:</strong> Department of Posts partnering with BSE.</li>
+                            <li><strong>Goal:</strong> Post offices to act as Mutual Fund distributors to boost financial inclusion in rural areas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 32 -->
+            <div class="topic-card" data-index="32">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">32</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🖥️ IT Schemes for Rural India</div>
+                        <div class="topic-subtitle">PMGDISHA, BharatNet, FutureSkills PRIME</div>
+                    </div>
+                    <div class="topic-tag">Digital</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>PMGDISHA:</strong> Digital literacy for rural households.</li>
+                            <li><strong>BharatNet:</strong> Connecting 2.5 lakh Gram Panchayats via optical fibre.</li>
+                            <li><strong>FutureSkills PRIME:</strong> Re-skilling workforce for Industry 4.0.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 33 -->
+            <div class="topic-card" data-index="33">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">33</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🧵 PM-MITRA Parks</div>
+                        <div class="topic-subtitle">7 Mega Textile Regions — 5F Vision: Farm to Foreign</div>
+                    </div>
+                    <div class="topic-tag">Industry</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Scheme:</strong> 7 Mega Integrated Textile Regions and Apparel Parks.</li>
+                            <li><strong>Locations:</strong> Karnataka, MP, Maharashtra, TN, Telangana, UP, Gujarat.</li>
+                            <li><strong>Vision:</strong> 5F (Farm to Fibre to Factory to Fashion to Foreign).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 34 -->
+            <div class="topic-card" data-index="34">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">34</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🌫️ CAQM &amp; GRAP Stage-IV</div>
+                        <div class="topic-subtitle">Delhi-NCR air quality — BS-IV ban, construction halt</div>
+                    </div>
+                    <div class="topic-tag">Environment</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Action:</strong> CAQM invoked GRAP Stage-IV in Delhi-NCR.</li>
+                            <li><strong>Measures:</strong> Ban on BS-IV diesel trucks, construction ban, hybrid mode for schools.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 35 -->
+            <div class="topic-card" data-index="35">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">35</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🛥️ National Waterway 37</div>
+                        <div class="topic-subtitle">River Gandak — India-Nepal cargo transit route</div>
+                    </div>
+                    <div class="topic-tag">Infra</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>River:</strong> Gandak.</li>
+                            <li><strong>Route:</strong> Critical for India-Nepal cargo transit.</li>
+                            <li><strong>Infra:</strong> Jetties deployed at Mangalpur and Bettiah.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 36 -->
+            <div class="topic-card" data-index="36">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">36</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇦🇺 Bondi Beach Terror Attack</div>
+                        <div class="topic-subtitle">PM Modi condemned terrorist attack in Australia</div>
+                    </div>
+                    <div class="topic-tag">Global</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> PM Modi condemned the terrorist attack at Bondi Beach, Australia.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 37 -->
+            <div class="topic-card" data-index="37">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">37</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏸 Squash World Cup Victory</div>
+                        <div class="topic-subtitle">India's first-ever title — defeated Hong Kong 3-0</div>
+                    </div>
+                    <div class="topic-tag">Sports</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Historic Win:</strong> India won its first-ever Squash World Cup title.</li>
+                            <li><strong>Final:</strong> Defeated Hong Kong 3-0.</li>
+                            <li><strong>Key Players:</strong> Joshna Chinnappa, Abhay Singh, Anahat Singh.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 38 -->
+            <div class="topic-card" data-index="38">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">38</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">💳 SPARSH</div>
+                        <div class="topic-subtitle">Defence pension platform — 31.69 lakh pensioners, 17-day grievance resolution</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Platform:</strong> System for Pension Administration – Raksha.</li>
+                            <li><strong>Achievement:</strong> 31.69 lakh pensioners onboarded; grievance redressal reduced to 17 days.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 39 -->
+            <div class="topic-card" data-index="39">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">39</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📋 Central Information Commission</div>
+                        <div class="topic-subtitle">8 new Information Commissioners sworn in</div>
+                    </div>
+                    <div class="topic-tag">Governance</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Appointments:</strong> 8 new Information Commissioners sworn in.</li>
+                            <li><strong>Chief IC:</strong> Shri Raj Kumar Goyal administered the oath.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 40 -->
+            <div class="topic-card" data-index="40">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">40</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏆 NECA Awards</div>
+                        <div class="topic-subtitle">National Energy Conservation Awards — Bureau of Energy Efficiency</div>
+                    </div>
+                    <div class="topic-tag">Energy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> National Energy Conservation Awards.</li>
+                            <li><strong>Context:</strong> Associated with Bureau of Energy Efficiency events promoting energy conservation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 41 -->
+            <div class="topic-card" data-index="41">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">41</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🤿 Exercise Ekatha 2025</div>
+                        <div class="topic-subtitle">8th India-Maldives bilateral maritime exercise — Divers/Marcos</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Type:</strong> 8th edition, bilateral maritime exercise.</li>
+                            <li><strong>Parties:</strong> India and Maldives (Divers/Marcos).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 42 -->
+            <div class="topic-card" data-index="42">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">42</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🎖️ Param Vir Dirgha</div>
+                        <div class="topic-subtitle">Rashtrapati Bhavan gallery — 21 Param Vir Chakra awardees</div>
+                    </div>
+                    <div class="topic-tag">National</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Inauguration:</strong> President Murmu inaugurated the gallery at Rashtrapati Bhavan on Vijay Diwas (Dec 16).</li>
+                            <li><strong>Content:</strong> Portraits of all 21 Param Vir Chakra awardees.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 43 -->
+            <div class="topic-card" data-index="43">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">43</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🗣️ BHASHINI</div>
+                        <div class="topic-subtitle">National Language Technology Mission — Bhasha Daan for endangered languages</div>
+                    </div>
+                    <div class="topic-tag">Technology</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Mission:</strong> National Language Technology Mission (AI-led translation).</li>
+                            <li><strong>Focus:</strong> "Bhasha Daan" workshop to preserve endangered languages like Pali, Prakrit, and Avesta Pahlavi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 44 -->
+            <div class="topic-card" data-index="44">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">44</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇪🇹 India-Ethiopia Relations</div>
+                        <div class="topic-subtitle">PM's first bilateral visit — Strategic Partnership &amp; Great Honor</div>
+                    </div>
+                    <div class="topic-tag">Bilateral</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Visit:</strong> PM Modi visited Addis Ababa (first bilateral visit).</li>
+                            <li><strong>Upgrade:</strong> Relations elevated to Strategic Partnership.</li>
+                            <li><strong>Award:</strong> PM conferred with the 'Great Honor Nishan of Ethiopia'.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 45 -->
+            <div class="topic-card" data-index="45">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">45</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏛️ Adwa Victory Monument</div>
+                        <div class="topic-subtitle">PM Modi tribute in Addis Ababa — Ethiopia's 1896 anti-colonial victory</div>
+                    </div>
+                    <div class="topic-tag">Culture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> PM Modi paid tribute in Addis Ababa.</li>
+                            <li><strong>History:</strong> Commemorates Ethiopian victory over colonial forces (Italy) in 1896.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 46 -->
+            <div class="topic-card" data-index="46">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">46</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇦🇷 India-Argentina Agriculture</div>
+                        <div class="topic-subtitle">ICAR-INTA Work Plan 2025-27 — digital agriculture &amp; biotechnology</div>
+                    </div>
+                    <div class="topic-tag">Bilateral</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Agreement:</strong> Signed ICAR-INTA Work Plan 2025-27.</li>
+                            <li><strong>Focus:</strong> Sustainable agronomy, digital agriculture, and crop biotechnology.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 47 -->
+            <div class="topic-card" data-index="47">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">47</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📡 C-DOT Awards</div>
+                        <div class="topic-subtitle">IEEE SA Corporate Award 2025 — first Indian organization</div>
+                    </div>
+                    <div class="topic-tag">Award</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Achievement:</strong> Won the IEEE SA Corporate Award 2025.</li>
+                            <li><strong>Reason:</strong> Contributions to WiFi, 5G, and broadband standards. First Indian organization to win.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 48 -->
+            <div class="topic-card" data-index="48">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">48</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🚁 INAS 335 'Ospreys'</div>
+                        <div class="topic-subtitle">Naval Air Squadron — MH 60R Romeo ASW helicopters at INS Hansa</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Commissioning:</strong> New Naval Air Squadron at INS Hansa, Goa.</li>
+                            <li><strong>Aircraft:</strong> Operates MH 60R (Romeo) Anti-Submarine Warfare helicopters.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 49 -->
+            <div class="topic-card" data-index="49">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">49</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏜️ Exercise Desert Cyclone</div>
+                        <div class="topic-subtitle">2nd India-UAE Joint Military Exercise — Abu Dhabi</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Type:</strong> 2nd Joint Military Exercise between India and UAE.</li>
+                            <li><strong>Location:</strong> Abu Dhabi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 50 -->
+            <div class="topic-card" data-index="50">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">50</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🦐 White Spot Disease</div>
+                        <div class="topic-subtitle">Shrimp farmers in AP — "Report Fish Disease" app launched</div>
+                    </div>
+                    <div class="topic-tag">Agriculture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Context:</strong> Outbreak affecting shrimp farmers in Andhra Pradesh.</li>
+                            <li><strong>Tech:</strong> "Report Fish Disease" app launched for surveillance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 51 -->
+            <div class="topic-card" data-index="51">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">51</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">💊 Peptide Therapy (SA-XV)</div>
+                        <div class="topic-subtitle">15-residue peptide for Fungal Keratitis — non-toxic alternative</div>
+                    </div>
+                    <div class="topic-tag">Science</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Innovation:</strong> Scientists developed a 15-residue peptide 'SA-XV'.</li>
+                            <li><strong>Use:</strong> Treats Fungal Keratitis (eye infection) without the toxicity of Amphotericin B.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 52 -->
+            <div class="topic-card" data-index="52">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">52</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">⚛️ Thorium Reserves</div>
+                        <div class="topic-subtitle">India's 3-stage nuclear program — Stage III for energy security</div>
+                    </div>
+                    <div class="topic-tag">Energy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Strategy:</strong> India's 3-stage nuclear program focuses on utilizing vast Thorium reserves (Stage III) to breed U-233 for energy security.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 53 -->
+            <div class="topic-card" data-index="53">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">53</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🕊️ Obituary: Shri Ram Sutar</div>
+                        <div class="topic-subtitle">Renowned sculptor — creator of Statue of Unity</div>
+                    </div>
+                    <div class="topic-tag">National</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Person:</strong> Renowned sculptor passed away.</li>
+                            <li><strong>Famous Work:</strong> Statue of Unity (Kevadia).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 54 -->
+            <div class="topic-card" data-index="54">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">54</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏦 One RRB One Logo</div>
+                        <div class="topic-subtitle">Unified brand identity for all Regional Rural Banks</div>
+                    </div>
+                    <div class="topic-tag">Economy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Initiative:</strong> Unified brand identity/logo unveiled for all Regional Rural Banks (RRBs) to signify strength and unity.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 55 -->
+            <div class="topic-card" data-index="55">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">55</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇴🇲 India-Oman CEPA</div>
+                        <div class="topic-subtitle">Comprehensive Economic Partnership Agreement signed</div>
+                    </div>
+                    <div class="topic-tag">Trade</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Agreement:</strong> Comprehensive Economic Partnership Agreement signed.</li>
+                            <li><strong>Significance:</strong> Boosts strategic engagement with the Gulf region.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 56 -->
+            <div class="topic-card" data-index="56">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">56</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏅 Order of Oman</div>
+                        <div class="topic-subtitle">Highest civilian honour conferred on PM Modi by Sultan Haitham</div>
+                    </div>
+                    <div class="topic-tag">Bilateral</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Award:</strong> Highest civilian honour of Oman conferred upon PM Modi by Sultan Haitham bin Tarik.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 57 -->
+            <div class="topic-card" data-index="57">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">57</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🌾 Agri-Schemes: ATMA, STRY, SMAM</div>
+                        <div class="topic-subtitle">Extension reforms, skill training &amp; agricultural mechanization</div>
+                    </div>
+                    <div class="topic-tag">Agriculture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>ATMA:</strong> Extension reforms in 734 districts.</li>
+                            <li><strong>STRY:</strong> Skill training for rural youth.</li>
+                            <li><strong>SMAM:</strong> Sub-Mission on Agricultural Mechanization (financial assistance for machinery).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 58 -->
+            <div class="topic-card" data-index="58">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">58</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇮🇳 Kakori Train Action Tribute</div>
+                        <div class="topic-subtitle">Balidaan Diwas — Bismil, Ashfaqulla Khan, Roshan Singh</div>
+                    </div>
+                    <div class="topic-tag">National</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> Amit Shah paid tribute to Ram Prasad Bismil, Ashfaqulla Khan, and Roshan Singh on their Balidaan Diwas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 59 -->
+            <div class="topic-card" data-index="59">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">59</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🚀 TIDE 2.0</div>
+                        <div class="topic-subtitle">Technology Incubation — 1700+ startups via 51 incubators</div>
+                    </div>
+                    <div class="topic-tag">Innovation</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Scheme:</strong> Technology Incubation and Development of Entrepreneurs.</li>
+                            <li><strong>Impact:</strong> Supported 1700+ startups via 51 incubators.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 60 -->
+            <div class="topic-card" data-index="60">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">60</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏛️ NMHC — Lothal</div>
+                        <div class="topic-subtitle">India-Netherlands MoU — National Maritime Heritage Complex</div>
+                    </div>
+                    <div class="topic-tag">Culture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Collaboration:</strong> MoU signed between India and the Netherlands.</li>
+                            <li><strong>Location:</strong> Lothal, Gujarat (Ancient Harappan port city).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 61 -->
+            <div class="topic-card" data-index="61">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">61</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🛒 PM SVANidhi Extended</div>
+                        <div class="topic-subtitle">Street vendor loans extended to March 2030 — 1.15 crore beneficiaries</div>
+                    </div>
+                    <div class="topic-tag">Social</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Update:</strong> Lending period extended to March 31, 2030.</li>
+                            <li><strong>Goal:</strong> Benefit 1.15 crore street vendors with collateral-free loans.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 62 -->
+            <div class="topic-card" data-index="62">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">62</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🐯 NTCA Meeting</div>
+                        <div class="topic-subtitle">28th meeting at Sundarbans — chaired by Environment Minister</div>
+                    </div>
+                    <div class="topic-tag">Environment</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> 28th National Tiger Conservation Authority meeting at Sundarbans.</li>
+                            <li><strong>Chair:</strong> Environment Minister Bhupender Yadav.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 63 -->
+            <div class="topic-card" data-index="63">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">63</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📜 Viksit Bharat–G RAM G Act, 2025</div>
+                        <div class="topic-subtitle">Replaces MGNREGA — 125 days employment, weekly wages</div>
+                    </div>
+                    <div class="topic-tag">Law</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Legislation:</strong> Replaces MGNREGA.</li>
+                            <li><strong>Key Changes:</strong> Guaranteed employment increased to 125 days (from 100). Wages paid weekly. Focus on 4 verticals including water security.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 64 -->
+            <div class="topic-card" data-index="64">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">64</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏘️ PESA Mahotsav</div>
+                        <div class="topic-subtitle">Visakhapatnam — PESA Act 1996 for 5th Schedule areas</div>
+                    </div>
+                    <div class="topic-tag">Governance</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> Celebrated in Visakhapatnam.</li>
+                            <li><strong>Law:</strong> PESA Act 1996 extends Panchayati Raj to 5th Schedule areas, empowering Gram Sabhas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 65 -->
+            <div class="topic-card" data-index="65">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">65</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏛️ Good Governance Day</div>
+                        <div class="topic-subtitle">Dec 25 — Vajpayee's birthday — 5 digital reforms launched</div>
+                    </div>
+                    <div class="topic-tag">Governance</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Date:</strong> December 25 (Atal Bihari Vajpayee's birth anniversary).</li>
+                            <li><strong>Launches:</strong> 5 digital reforms including AI Recruitment Tool and e-HRMS 2.0.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 66 -->
+            <div class="topic-card" data-index="66">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">66</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📖 Constitution in Santhali</div>
+                        <div class="topic-subtitle">President released Constitution in Ol Chiki script</div>
+                    </div>
+                    <div class="topic-tag">National</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Release:</strong> President released the Constitution of India in Santhali language (Ol Chiki script).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 67 -->
+            <div class="topic-card" data-index="67">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">67</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">💎 Kimberley Process Chair</div>
+                        <div class="topic-subtitle">India chairs KP for 2026 — preventing conflict diamond trade</div>
+                    </div>
+                    <div class="topic-tag">Global</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Role:</strong> India selected as Chairperson of Kimberley Process for 2026.</li>
+                            <li><strong>Mandate:</strong> Prevent trade in "conflict diamonds".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 68 -->
+            <div class="topic-card" data-index="68">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">68</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🖥️ Digital Reforms</div>
+                        <div class="topic-subtitle">Good Governance Day initiatives — transparency focus</div>
+                    </div>
+                    <div class="topic-tag">Digital</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Context:</strong> Detailed under Good Governance Day (Item 65), focusing on transparency and digital governance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 69 -->
+            <div class="topic-card" data-index="69">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">69</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🦠 TB Mukt Bharat</div>
+                        <div class="topic-subtitle">Elimination target by 2027 — review in MP &amp; Chhattisgarh</div>
+                    </div>
+                    <div class="topic-tag">Health</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Target:</strong> Elimination of TB by 2027.</li>
+                            <li><strong>Action:</strong> Health Minister reviewed status in MP and Chhattisgarh.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 70 -->
+            <div class="topic-card" data-index="70">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">70</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🧲 REPM Ecosystem</div>
+                        <div class="topic-subtitle">₹7,280 crore for Rare Earth Permanent Magnets — reducing China reliance</div>
+                    </div>
+                    <div class="topic-tag">Industry</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Scheme:</strong> ₹7,280 crore approved for Sintered Rare Earth Permanent Magnets.</li>
+                            <li><strong>Goal:</strong> 6,000 MTPA capacity to reduce reliance on China for EV/Defence magnets.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 71 -->
+            <div class="topic-card" data-index="71">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">71</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">💣 IS 19445:2025 — Bomb Disposal</div>
+                        <div class="topic-subtitle">BIS standard for bomb disposal systems evaluation</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Standard:</strong> BIS released Indian Standard for Bomb Disposal Systems (Evaluation &amp; Requirements).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 72 -->
+            <div class="topic-card" data-index="72">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">72</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">♟️ FIDE World Rapid Chess 2025</div>
+                        <div class="topic-subtitle">Arjun Erigaisi — Bronze medal</div>
+                    </div>
+                    <div class="topic-tag">Sports</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Winner:</strong> Arjun Erigaisi won the Bronze medal.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 73 -->
+            <div class="topic-card" data-index="73">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">73</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🧠 BharatGen</div>
+                        <div class="topic-subtitle">India's first sovereign multilingual AI LLM — ₹1,293 crore</div>
+                    </div>
+                    <div class="topic-tag">Technology</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Tech:</strong> India's first sovereign, multilingual AI Large Language Model (LLM).</li>
+                            <li><strong>Funding:</strong> ₹1,293 crore government support.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 74 -->
+            <div class="topic-card" data-index="74">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">74</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🤖 AI Impact Summit — Extended</div>
+                        <div class="topic-subtitle">"Democratising AI, Bridging the AI Divide" — horizontal impact</div>
+                    </div>
+                    <div class="topic-tag">Technology</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Theme:</strong> "Democratising AI, Bridging the AI Divide".</li>
+                            <li><strong>Context:</strong> Ensuring AI makes horizontal impact across sectors.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 75 -->
+            <div class="topic-card" data-index="75">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">75</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🧬 BRIC Secretariat</div>
+                        <div class="topic-subtitle">Biotechnology Research &amp; Innovation Council — India 12th globally</div>
+                    </div>
+                    <div class="topic-tag">Science</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> Inauguration of Biotechnology Research and Innovation Council (BRIC) Secretariat.</li>
+                            <li><strong>Rank:</strong> India is 12th globally in bio-manufacturing.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 76 -->
+            <div class="topic-card" data-index="76">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">76</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">✍️ PM-YUVA 3.0 Results</div>
+                        <div class="topic-subtitle">43 young authors (under 30) in 22 languages — mentored by NBT</div>
+                    </div>
+                    <div class="topic-tag">Culture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Selection:</strong> 43 young authors (under 30) selected in 22 languages + English.</li>
+                            <li><strong>Mentor:</strong> National Book Trust (NBT).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 77 -->
+            <div class="topic-card" data-index="77">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">77</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏗️ Mega Infrastructure Projects</div>
+                        <div class="topic-subtitle">USBRL, Chenab Bridge &amp; New Pamban Bridge</div>
+                    </div>
+                    <div class="topic-tag">Infra</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>USBRL:</strong> Udhampur-Srinagar-Baramula Rail Link (272 km).</li>
+                            <li><strong>Chenab Bridge:</strong> World's highest railway arch bridge (359m high).</li>
+                            <li><strong>New Pamban Bridge:</strong> India's first vertical-lift sea bridge (Tamil Nadu).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>PIB Monthly Digest — December 2025 · Built for UPSC Aspirants<br>
+        <span style="opacity: 0.6;">Template format · Reusable for future months</span></p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('pib-theme', next);
+        }
+
+        (function() {
+            const saved = localStorage.getItem('pib-theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        })();
+
+        function toggleCard(header) {
+            const card = header.closest('.topic-card');
+            const content = card.querySelector('.topic-content');
+            if (card.classList.contains('open')) {
+                content.style.maxHeight = null;
+                card.classList.remove('open');
+                card.querySelectorAll('.subtopic.open').forEach(sub => {
+                    sub.classList.remove('open');
+                    sub.querySelector('.subtopic-content').style.maxHeight = null;
+                });
+            } else {
+                content.style.maxHeight = 'none';
+                card.classList.add('open');
+            }
+        }
+
+        function toggleSubtopic(header) {
+            const sub = header.closest('.subtopic');
+            const content = sub.querySelector('.subtopic-content');
+            if (sub.classList.contains('open')) {
+                content.style.maxHeight = null;
+                sub.classList.remove('open');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                sub.classList.add('open');
+            }
+            let parent = sub.closest('.topic-content');
+            if (parent) {
+                setTimeout(() => { parent.style.maxHeight = 'none'; }, 10);
+            }
+        }
+
+                let allExpanded = false;
+        function toggleAll() {
+            const cards = document.querySelectorAll('.topic-card');
+            const btn = document.getElementById('expandAllBtn');
+
+            allExpanded = !allExpanded;
+
+            cards.forEach(card => {
+                const content = card.querySelector('.topic-content');
+                if (allExpanded) {
+                    card.classList.add('open');
+                    content.style.maxHeight = 'none';
+                } else {
+                    card.classList.remove('open');
+                    content.style.maxHeight = null;
+                    card.querySelectorAll('.subtopic.open').forEach(sub => {
+                        sub.classList.remove('open');
+                        sub.querySelector('.subtopic-content').style.maxHeight = null;
+                    });
+                }
+            });
+
+            btn.textContent = allExpanded ? 'Collapse All' : 'Expand All';
+        }
+
+        // Year Switcher
+        function switchYear(year) {
+            document.querySelectorAll('.year-panel').forEach(p => {
+                p.classList.remove('visible');
+            });
+            document.querySelectorAll('.year-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            document.getElementById('year-' + year).classList.add('visible');
+            event.target.classList.add('active');
+        }
+
+        // Search
+        function searchTopics() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.topic-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (query === '' || text.includes(query)) {
+                    card.classList.remove('hidden');
+                    card.style.display = '';
+                } else {
+                    card.classList.add('hidden');
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

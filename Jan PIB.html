@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIB Monthly Digest — January 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --bg-card: #FFFFFF;
+            --bg-dropdown: #FFFDF5;
+            --text: #1A1A1A;
+            --text-secondary: #555555;
+            --border: #E8E8E8;
+            --accent: #F5C518;
+            --accent-light: #FFF8DC;
+            --accent-mid: #FFE066;
+            --accent-dark: #D4A800;
+            --accent-deep: #8B7500;
+            --shadow: 0 2px 12px rgba(0,0,0,0.06);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.1);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --tag-bg: #FFF8DC;
+            --tag-text: #8B7500;
+            --icon-bg: #FFF3B0;
+            --toggle-bg: #E8E8E8;
+        }
+
+        [data-theme="dark"] {
+            --bg: #111111;
+            --bg-card: #1A1A1A;
+            --bg-dropdown: #222222;
+            --text: #F0F0F0;
+            --text-secondary: #AAAAAA;
+            --border: #333333;
+            --accent: #F5C518;
+            --accent-light: #3D3500;
+            --accent-mid: #6B5E00;
+            --accent-dark: #FFD43B;
+            --accent-deep: #FFE066;
+            --shadow: 0 2px 12px rgba(0,0,0,0.3);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.4);
+            --tag-bg: #2A2500;
+            --tag-text: #FFE066;
+            --icon-bg: #2A2500;
+            --toggle-bg: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            transition: background 0.3s, color 0.3s;
+            min-height: 100vh;
+        }
+
+        /* === HEADER === */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            transition: background 0.3s;
+        }
+
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+                .logo-icon {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1A1A1A;
+            box-shadow: 0 2px 8px rgba(245,197,24,0.3);
+        }
+
+                .logo-text {
+            font-family: 'Merriweather', serif;
+            font-weight: 900;
+            font-size: 15px;
+            letter-spacing: -0.5px;
+            white-space: nowrap;
+        }
+
+        .logo-text span {
+            color: var(--accent-dark);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle {
+            width: 52px;
+            height: 28px;
+            background: var(--toggle-bg);
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.3s;
+        }
+
+        .theme-toggle::after {
+            content: '☀️';
+            font-size: 14px;
+            position: absolute;
+            left: 4px;
+            top: 3px;
+            width: 22px;
+            height: 22px;
+            background: var(--bg-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
+
+        [data-theme="dark"] .theme-toggle::after {
+            content: '🌙';
+            transform: translateX(24px);
+        }
+
+        .expand-all-btn {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .expand-all-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent-dark);
+        }
+
+        /* === HERO === */
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px 32px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent-light);
+            color: var(--tag-text);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-dark);
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        
+                /* === MONTH NAV === */
+        .month-nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 24px;
+        }
+
+        .month-nav-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .year-selector {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .year-btn {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 22px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .year-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .year-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #1A1A1A;
+            box-shadow: 0 2px 10px rgba(245,197,24,0.3);
+        }
+
+        .year-panel {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .year-panel.visible {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .month-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+        }
+
+        .month-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 4px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .month-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .month-btn.active {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: #1A1A1A;
+            box-shadow: 0 2px 10px rgba(245,197,24,0.3);
+        }
+
+        .month-btn.done {
+            border-color: var(--accent-mid);
+            background: var(--accent-light);
+        }
+
+        .month-btn.disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .month-btn .m-name {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .month-btn .m-status {
+            font-size: 9px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+            opacity: 0.7;
+        }
+
+        .month-btn.active .m-status {
+            opacity: 1;
+        }
+
+        .month-btn.done .m-status {
+            color: var(--accent-deep);
+        }
+
+        [data-theme="dark"] .month-btn.done .m-status {
+            color: var(--accent-mid);
+        }
+
+        @media (max-width: 600px) {
+            .month-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 6px;
+            }
+
+            .month-btn {
+                padding: 8px 2px;
+            }
+
+            .month-btn .m-name {
+                font-size: 12px;
+            }
+
+            .year-btn {
+                padding: 7px 16px;
+                font-size: 13px;
+            }
+        }
+
+
+        /* === MAIN === */
+        .main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        /* === TOPIC CARD === */
+        .topic-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .topic-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .topic-card.open {
+            border-color: var(--accent);
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .topic-header:hover {
+            background: var(--accent-light);
+        }
+
+        .topic-num {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            background: var(--icon-bg);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--accent-deep);
+            transition: background 0.2s;
+        }
+
+        .topic-card.open .topic-num {
+            background: var(--accent);
+            color: #1A1A1A;
+        }
+
+        .topic-icon {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .topic-title-group {
+            flex: 1;
+        }
+
+        .topic-title {
+            font-family: 'Merriweather', serif;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .topic-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .topic-tag {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .topic-chevron {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+            color: var(--text-secondary);
+        }
+
+        .topic-card.open .topic-chevron {
+            transform: rotate(180deg);
+            color: var(--accent-dark);
+        }
+
+        .topic-chevron svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* === DROPDOWN CONTENT === */
+        .topic-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .topic-content-inner {
+            padding: 0 20px 20px;
+            padding-left: 72px;
+        }
+
+        .topic-content ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-content li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        .topic-content li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .topic-content li strong {
+            color: var(--accent-deep);
+            font-weight: 600;
+        }
+
+        [data-theme="dark"] .topic-content li strong {
+            color: var(--accent-dark);
+        }
+
+        /* === SUBTOPIC === */
+        .subtopic {
+            margin-top: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: var(--bg-dropdown);
+        }
+
+        .subtopic-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-deep);
+            transition: background 0.2s;
+        }
+
+        [data-theme="dark"] .subtopic-header {
+            color: var(--accent-mid);
+        }
+
+        .subtopic-header:hover {
+            background: var(--accent-light);
+        }
+
+        .subtopic-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-mid);
+            flex-shrink: 0;
+        }
+
+        .subtopic-chevron {
+            margin-left: auto;
+            transition: transform 0.3s;
+            font-size: 12px;
+        }
+
+        .subtopic.open .subtopic-chevron {
+            transform: rotate(180deg);
+        }
+
+        .subtopic-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .subtopic-content-inner {
+            padding: 0 14px 12px 32px;
+        }
+
+        .subtopic-content ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .subtopic-content li {
+            padding-left: 14px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .subtopic-content li::before {
+            width: 5px;
+            height: 5px;
+            top: 8px;
+            background: var(--accent-mid);
+        }
+
+        /* === SEARCH === */
+        .search-wrap {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto 32px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px 12px 44px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--bg-card);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(245,197,24,0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 32px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--accent-dark);
+            text-decoration: none;
+        }
+
+        /* === SCROLLBAR === */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            .topic-content-inner {
+                padding-left: 20px;
+            }
+
+            .topic-header {
+                padding: 14px 16px;
+                gap: 10px;
+            }
+
+            .topic-tag {
+                display: none;
+            }
+
+            .stats-row {
+                gap: 20px;
+            }
+
+            .header-inner {
+                padding: 12px 16px;
+            }
+        }
+
+        /* === ANIMATIONS === */
+        .topic-card {
+            animation: fadeUp 0.4s ease both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icon">PIB</div>
+                <div class="logo-text">Monthly <span>Digest</span></div>
+            </div>
+            <div class="header-controls">
+                <button class="expand-all-btn" id="expandAllBtn" onclick="toggleAll()">Expand All</button>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">📋 Press Information Bureau</div>
+        <h1>January <span>2026</span></h1>
+        <p>Comprehensive extraction of news &amp; current affairs from the Monthly PIB compilation, organized by topic.</p>
+        
+    </section>
+
+        <!-- MONTH NAVIGATION -->
+        <!-- MONTH NAVIGATION -->
+    <nav class="month-nav">
+        <div class="month-nav-label">📅 Select Month</div>
+
+        <!-- Year Selector Buttons -->
+        <div class="year-selector">
+            <button class="year-btn" onclick="switchYear('2025')">2025</button>
+            <button class="year-btn active" onclick="switchYear('2026')">2026</button>
+        </div>
+
+        <!-- 2025 Months -->
+        <div class="year-panel" id="year-2025">
+            <div class="month-grid">
+                <a href="january-2025.html" class="month-btn disabled">
+                    <span class="m-name">Jan</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="february-2025.html" class="month-btn disabled">
+                    <span class="m-name">Feb</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="march-2025.html" class="month-btn disabled">
+                    <span class="m-name">Mar</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="april-2025.html" class="month-btn disabled">
+                    <span class="m-name">Apr</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="may-2025.html" class="month-btn disabled">
+                    <span class="m-name">May</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="june-2025.html" class="month-btn disabled">
+                    <span class="m-name">Jun</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="july-2025.html" class="month-btn disabled">
+                    <span class="m-name">Jul</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="august-2025.html" class="month-btn disabled">
+                    <span class="m-name">Aug</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="september-2025.html" class="month-btn disabled">
+                    <span class="m-name">Sep</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="october-2025.html" class="month-btn disabled">
+                    <span class="m-name">Oct</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="november-2025.html" class="month-btn disabled">
+                    <span class="m-name">Nov</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="december-2025.html" class="month-btn disabled">
+                    <span class="m-name">Dec</span>
+                    <span class="m-status">Soon</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 2026 Months -->
+        <div class="year-panel visible" id="year-2026">
+            <div class="month-grid">
+                <a href="january-2026.html" class="month-btn active">
+                    <span class="m-name">Jan</span>
+                    <span class="m-status">● Live</span>
+                </a>
+                <a href="february-2026.html" class="month-btn disabled">
+                    <span class="m-name">Feb</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="march-2026.html" class="month-btn disabled">
+                    <span class="m-name">Mar</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="april-2026.html" class="month-btn disabled">
+                    <span class="m-name">Apr</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="may-2026.html" class="month-btn disabled">
+                    <span class="m-name">May</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="june-2026.html" class="month-btn disabled">
+                    <span class="m-name">Jun</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="july-2026.html" class="month-btn disabled">
+                    <span class="m-name">Jul</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="august-2026.html" class="month-btn disabled">
+                    <span class="m-name">Aug</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="september-2026.html" class="month-btn disabled">
+                    <span class="m-name">Sep</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="october-2026.html" class="month-btn disabled">
+                    <span class="m-name">Oct</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="november-2026.html" class="month-btn disabled">
+                    <span class="m-name">Nov</span>
+                    <span class="m-status">Soon</span>
+                </a>
+                <a href="december-2026.html" class="month-btn disabled">
+                    <span class="m-name">Dec</span>
+                    <span class="m-status">Soon</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- SEARCH -->
+        <div class="search-wrap">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search topics…" oninput="searchTopics()" />
+        </div>
+
+        <!-- TOPIC CARDS -->
+        <div id="topicList">
+
+            <!-- 1. Environment -->
+            <div class="topic-card" data-index="1">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">01</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🌿 Environment</div>
+                        <div class="topic-subtitle">Forest conservation, wildlife, climate action &amp; pollution control</div>
+                    </div>
+                    <div class="topic-tag">Policy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Year-End Review 2025:</strong> A year dedicated to forest conservation, wildlife protection, and global climate leadership.</li>
+                            <li><strong>Ek Ped Maa Ke Naam:</strong> 262.4 crore saplings planted since June 5, 2024.</li>
+                            <li><strong>Forest Cover:</strong> India ranks 9th globally in total forest area, 3rd in annual forest gain. 4.83% cumulative gain in forest &amp; tree cover since 2013.</li>
+                            <li><strong>Project Cheetah:</strong> Expanded to Gandhisagar Wildlife Sanctuary; total population reached 30 (including 19 India-born cubs).</li>
+                            <li><strong>Air Quality (NCAP):</strong> 103 cities recorded PM10 reduction in 2024-25 compared to 2017-18.</li>
+                        </ul>
+
+                        <!-- Subtopic: Wetlands -->
+                        <div class="subtopic" data-sub="wetlands">
+                            <div class="subtopic-header" onclick="toggleSubtopic(this)">
+                                <div class="subtopic-dot"></div>
+                                Wetlands &amp; Ramsar Sites
+                                <span class="subtopic-chevron">▾</span>
+                            </div>
+                            <div class="subtopic-content">
+                                <div class="subtopic-content-inner">
+                                    <ul>
+                                        <li>Total Ramsar Sites reached <strong>96 in 2025</strong> (~1.36 million ha), up from 26 in 2014. 11 sites added in 2025.</li>
+                                        <li><strong>Indore &amp; Udaipur</strong> became India's first Ramsar Wetland Cities (January 2025).</li>
+                                        <li>India-led resolution on <strong>"Promoting Sustainable Lifestyles for the Wise Use of Wetlands"</strong> adopted at Ramsar CoP-15.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Subtopic: New Rules -->
+                        <div class="subtopic" data-sub="rules">
+                            <div class="subtopic-header" onclick="toggleSubtopic(this)">
+                                <div class="subtopic-dot"></div>
+                                New Rules Notified (2025)
+                                <span class="subtopic-chevron">▾</span>
+                            </div>
+                            <div class="subtopic-content">
+                                <div class="subtopic-content-inner">
+                                    <ul>
+                                        <li><strong>Environment Audit Rules, 2025</strong> — introducing Certified Third-Party Auditors.</li>
+                                        <li><strong>Environment Protection (Management of Contaminated Sites) Rules, 2025.</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Piprahwa Relics -->
+            <div class="topic-card" data-index="2">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">02</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏛️ Piprahwa Relics</div>
+                        <div class="topic-subtitle">Grand International Exposition — "The Light &amp; the Lotus"</div>
+                    </div>
+                    <div class="topic-tag">Culture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> PM to inaugurate "The Light &amp; the Lotus: Relics of the Awakened One".</li>
+                            <li><strong>Venue:</strong> Rai Pithora Cultural Complex, New Delhi.</li>
+                            <li><strong>Significance:</strong> Discovered in 1898, Piprahwa relics are among the earliest relics directly connected to Bhagwan Buddha and ancient Kapilavastu.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. MoSPI -->
+            <div class="topic-card" data-index="3">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">03</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📊 MoSPI — New Identity</div>
+                        <div class="topic-subtitle">Ministry of Statistics unveils new logo, tagline &amp; mascot</div>
+                    </div>
+                    <div class="topic-tag">Governance</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>New Logo:</strong> Unveiled on Jan 1, 2026. Features Ashoka Chakra, ₹ symbol, and upward growth bar.</li>
+                            <li><strong>Colors:</strong> Saffron, white, green, and deep blue — representing growth, truth, sustainability, and knowledge.</li>
+                            <li><strong>Tagline:</strong> "Data for Development".</li>
+                            <li><strong>Mascot:</strong> "Sankhyiki" — a citizen-centric mascot.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Rah-Veer -->
+            <div class="topic-card" data-index="4">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">04</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🚑 Rah-Veer (Good Samaritan)</div>
+                        <div class="topic-subtitle">Voluntary helpers of road accident victims — legal protections</div>
+                    </div>
+                    <div class="topic-tag">Law</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Concept:</strong> "Rah-Veers" are voluntary helpers of road accident victims.</li>
+                            <li><strong>Legal Protection:</strong> Good Samaritan Rules, 2020 (Section 134A, Motor Vehicles Amendment Act, 2019).</li>
+                            <li><strong>Key Rights:</strong> Protection from civil/criminal liability, police harassment, and forced disclosure of personal details.</li>
+                            <li><strong>Focus:</strong> Saving lives during the "Golden Hour" (first hour after injury).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. SAMPANN -->
+            <div class="topic-card" data-index="5">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">05</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">💰 SAMPANN</div>
+                        <div class="topic-subtitle">System for Accounting and Management of Pension — DoT pensioners</div>
+                    </div>
+                    <div class="topic-tag">Digital</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Full Form:</strong> System for Accounting and Management of Pension.</li>
+                            <li><strong>Beneficiaries:</strong> Department of Telecommunications (DoT) pensioners.</li>
+                            <li><strong>Features:</strong> Integrated online pension management, direct bank disbursement, DigiLocker integration (ePPOs, Form 16).</li>
+                            <li><strong>Tagline:</strong> "Sempann Jeevan, Nischint Jeevan".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Samudra Pratap -->
+            <div class="topic-card" data-index="6">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">06</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🚢 ICGS Samudra Pratap</div>
+                        <div class="topic-subtitle">India's first indigenous Pollution Control Vessel</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Vessel:</strong> ICGS Samudra Pratap — India's first indigenously designed Pollution Control Vessel (PCV).</li>
+                            <li><strong>Commissioned By:</strong> Raksha Mantri Shri Rajnath Singh.</li>
+                            <li><strong>Builder:</strong> Goa Shipyard Limited (GSL).</li>
+                            <li><strong>Significance:</strong> Largest ship in Indian Coast Guard fleet; dedicated to marine pollution response and "Blue Economy".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Khutbat-e-Modi -->
+            <div class="topic-card" data-index="7">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">07</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📖 Khutbat-e-Modi</div>
+                        <div class="topic-subtitle">Urdu compilation of PM's Independence Day speeches (2014–2025)</div>
+                    </div>
+                    <div class="topic-tag">Culture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Book:</strong> "Khutbat-e-Modi: Lal Qila Ki Faseel Se".</li>
+                            <li><strong>Content:</strong> Urdu compilation of PM Modi's Independence Day speeches (2014–2025).</li>
+                            <li><strong>Released By:</strong> Union Minister Shri Dharmendra Pradhan.</li>
+                            <li><strong>Publisher:</strong> National Council for Promotion of Urdu Language (NCPUL).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra: Exercise EKUVERIN -->
+            <div class="topic-card" data-index="7.5">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">⭐</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🤝 Exercise EKUVERIN</div>
+                        <div class="topic-subtitle">14th India-Maldives Joint Military Exercise</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> 14th Joint Military Exercise between India and Maldives.</li>
+                            <li><strong>Dates:</strong> 02–15 December 2025.</li>
+                            <li><strong>Location:</strong> Thiruvananthapuram, Kerala.</li>
+                            <li><strong>Participants:</strong> Indian Army (Garhwal Rifles) and Maldives National Defence Force (MNDF).</li>
+                            <li><strong>Meaning:</strong> "Ekuverin" means "Friends" in Dhivehi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. SARAS-2026 -->
+            <div class="topic-card" data-index="8">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">08</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🧵 SARAS-2026</div>
+                        <div class="topic-subtitle">National SHG exhibition — first time in Guntur, AP</div>
+                    </div>
+                    <div class="topic-tag">Social</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> National-level exhibition for Self-Help Groups (SHGs).</li>
+                            <li><strong>Location:</strong> Guntur, Andhra Pradesh (first national SARAS Mela hosted here).</li>
+                            <li><strong>Participants:</strong> ~300 women artisans/entrepreneurs, focusing on DWCRA women.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. W UMa-type Stars -->
+            <div class="topic-card" data-index="9">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">09</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">⭐ W UMa-type Stars</div>
+                        <div class="topic-subtitle">Contact binary star research — natural laboratories for stellar evolution</div>
+                    </div>
+                    <div class="topic-tag">Science</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Study:</strong> Research on "W Ursae Majoris" type contact binary stars.</li>
+                            <li><strong>Characteristics:</strong> Two stars orbiting so closely they share a common outer atmosphere (dumbbell-shaped).</li>
+                            <li><strong>Significance:</strong> Acts as "natural laboratories" to study stellar evolution and mass transfer.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Trade Watch Quarterly -->
+            <div class="topic-card" data-index="10">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">10</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📈 Trade Watch Quarterly</div>
+                        <div class="topic-subtitle">NITI Aayog's 5th edition — automotive exports &amp; global value chains</div>
+                    </div>
+                    <div class="topic-tag">Economy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> NITI Aayog released the 5th edition.</li>
+                            <li><strong>Focus:</strong> Analysis of India's trade performance, specifically automotive exports and global value chains.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Bio-Bitumen -->
+            <div class="topic-card" data-index="11">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">11</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🛣️ Bio-Bitumen</div>
+                        <div class="topic-subtitle">India first to commercially produce Bio-Bitumen from farm residue</div>
+                    </div>
+                    <div class="topic-tag">Innovation</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Achievement:</strong> India became the first country to commercially produce Bio-Bitumen (from farm residue via pyrolysis).</li>
+                            <li><strong>Impact:</strong> 15% blending can save ₹4,500 crore in forex and reduce crude oil imports.</li>
+                            <li><strong>Launch:</strong> CSIR Technology Transfer Ceremony.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Udai -->
+            <div class="topic-card" data-index="12">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">12</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🆔 Udai — Aadhaar Mascot</div>
+                        <div class="topic-subtitle">UIDAI's resident-facing communication companion</div>
+                    </div>
+                    <div class="topic-tag">Digital</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Mascot Name:</strong> Udai (उदय).</li>
+                            <li><strong>Launched By:</strong> UIDAI.</li>
+                            <li><strong>Purpose:</strong> A resident-facing "communication companion" to simplify Aadhaar understanding.</li>
+                            <li><strong>Creator:</strong> Designed by Arun Gokul (Kerala), winner of a national competition.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. Tourism -->
+            <div class="topic-card" data-index="13">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">13</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">✈️ Tourism</div>
+                        <div class="topic-subtitle">Swadesh Darshan 2.0, tribal homestays &amp; 20.57M international arrivals</div>
+                    </div>
+                    <div class="topic-tag">Economy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Swadesh Darshan:</strong> 75 projects completed since 2015.</li>
+                            <li><strong>New Scheme:</strong> Challenge Based Destination Development (CBDD) launched under Swadesh Darshan 2.0.</li>
+                            <li><strong>Tribal Tourism:</strong> PM-JUGA approved to develop 1,000 tribal homestays.</li>
+                            <li><strong>Stats:</strong> 20.57 million International Tourist Arrivals (ITAs) in 2024.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14. PANKHUDI Portal -->
+            <div class="topic-card" data-index="14">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">14</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">👩 PANKHUDI Portal</div>
+                        <div class="topic-subtitle">Integrated CSR portal for women &amp; child development</div>
+                    </div>
+                    <div class="topic-tag">Social</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Ministry:</strong> Women and Child Development (MWCD).</li>
+                            <li><strong>Function:</strong> Integrated digital portal to facilitate CSR and partnerships for women &amp; child development.</li>
+                            <li><strong>Goal:</strong> Structured stakeholder participation and transparency.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 15. MISHTI -->
+            <div class="topic-card" data-index="15">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">15</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🌊 MISHTI</div>
+                        <div class="topic-subtitle">Mangrove Initiative for Shoreline Habitats &amp; Tangible Incomes</div>
+                    </div>
+                    <div class="topic-tag">Environment</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Full Form:</strong> Mangrove Initiative for Shoreline Habitats and Tangible Incomes.</li>
+                            <li><strong>Event:</strong> National workshop held in Vijayawada.</li>
+                            <li><strong>Global Link:</strong> Contributes to the Mangrove Alliance for Climate (MAC).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 16. Creator's Corner -->
+            <div class="topic-card" data-index="16">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">16</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🎬 Creator's Corner</div>
+                        <div class="topic-subtitle">Prasar Bharati platform for digital creators — Orange Economy</div>
+                    </div>
+                    <div class="topic-tag">Media</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Launched By:</strong> Prasar Bharati on DD News.</li>
+                            <li><strong>Purpose:</strong> Dedicated platform to showcase content by digital creators, aligning with the "Orange Economy".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17. Clean Energy -->
+            <div class="topic-card" data-index="17">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">17</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">⚡ Clean Energy</div>
+                        <div class="topic-subtitle">Non-fossil fuel capacity reaches 266.78 GW — 500 GW target by 2030</div>
+                    </div>
+                    <div class="topic-tag">Energy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Record Growth:</strong> Non-fossil fuel capacity reached 266.78 GW in 2025 (22.6% rise from 2024).</li>
+                            <li><strong>Addition:</strong> 49.12 GW added in a single year.</li>
+                            <li><strong>Target:</strong> 500 GW non-fossil capacity by 2030.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18. India-Oman CEPA -->
+            <div class="topic-card" data-index="18">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">18</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇴🇲 India-Oman CEPA</div>
+                        <div class="topic-subtitle">Comprehensive Economic Partnership Agreement concluded</div>
+                    </div>
+                    <div class="topic-tag">Trade</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Agreement:</strong> Comprehensive Economic Partnership Agreement concluded.</li>
+                            <li><strong>Scope:</strong> Goods, services, investment, and regulatory cooperation (TBT, SPS).</li>
+                            <li><strong>Mutual Recognition:</strong> Includes agreements on GMP, Halal, and Organic certification.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 19. NIRANTAR -->
+            <div class="topic-card" data-index="19">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">19</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🔬 NIRANTAR</div>
+                        <div class="topic-subtitle">Coordinating platform for environmental research under MoEFCC</div>
+                    </div>
+                    <div class="topic-tag">Research</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Full Name:</strong> National Institute for Research &amp; Application of Natural Resources to Transform, Adapt and Build Resilience.</li>
+                            <li><strong>Nature:</strong> A coordinating platform of MoEFCC institutions (not a single institute) to integrate environmental research.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20. 16th ADMM-Plus -->
+            <div class="topic-card" data-index="20">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">20</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🛡️ 16th ADMM-Plus</div>
+                        <div class="topic-subtitle">Counter-Terrorism EWG — co-chaired by India and Malaysia</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Meeting:</strong> EWG on Counter-Terrorism held in New Delhi.</li>
+                            <li><strong>Chairs:</strong> Co-chaired by India and Malaysia.</li>
+                            <li><strong>Upcoming:</strong> Table Top Exercise (Malaysia, 2026) and Field Training Exercise (India, 2027).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 21. CSPOC -->
+            <div class="topic-card" data-index="21">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">21</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏛️ CSPOC</div>
+                        <div class="topic-subtitle">28th Conference of Commonwealth Speakers &amp; Presiding Officers</div>
+                    </div>
+                    <div class="topic-tag">Parliament</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> 28th Conference of Speakers and Presiding Officers of the Commonwealth.</li>
+                            <li><strong>Venue:</strong> Parliament House Complex, New Delhi.</li>
+                            <li><strong>Chair:</strong> Shri Om Birla (Lok Sabha Speaker).</li>
+                            <li><strong>Focus:</strong> Parliamentary independence and the role of Presiding Officers.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 22. Namami Gange -->
+            <div class="topic-card" data-index="22">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">22</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🐬 Namami Gange Mission</div>
+                        <div class="topic-subtitle">Dolphin rescue ambulance, aqua life monitoring &amp; skimmer conservation</div>
+                    </div>
+                    <div class="topic-tag">Environment</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Aqua Life Conservation Monitoring Centre:</strong> At WII Dehradun.</li>
+                            <li><strong>Dolphin Rescue Ambulance (TSAFI):</strong> For Ganga Dolphins.</li>
+                            <li><strong>Indian Skimmer Conservation Project:</strong> New initiative launched.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 23. IRENA -->
+            <div class="topic-card" data-index="23">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">23</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🌍 IRENA Assembly</div>
+                        <div class="topic-subtitle">16th Assembly in Abu Dhabi — decentralized renewable energy in agriculture</div>
+                    </div>
+                    <div class="topic-tag">Global</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> 16th Assembly held in Abu Dhabi.</li>
+                            <li><strong>India's Role:</strong> Minister Pralhad Joshi participated; emphasized decentralized renewable energy in agriculture.</li>
+                            <li><strong>About IRENA:</strong> HQ in Abu Dhabi, established 2009.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 24. SVASTIK Portal -->
+            <div class="topic-card" data-index="24">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">24</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🧪 SVASTIK Portal</div>
+                        <div class="topic-subtitle">Scientifically Validated Societal Traditional Knowledge — 19 languages</div>
+                    </div>
+                    <div class="topic-tag">Science</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Full Form:</strong> Scientifically Validated Societal Traditional Knowledge.</li>
+                            <li><strong>Launched By:</strong> CSIR-NIScPR.</li>
+                            <li><strong>Features:</strong> Available in 19 Indian languages; promotes validated traditional knowledge.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 25. Womaniya Initiative -->
+            <div class="topic-card" data-index="25">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">25</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">💪 Womaniya Initiative</div>
+                        <div class="topic-subtitle">GeM — Women-led MSEs secured over ₹80,000 crore in orders</div>
+                    </div>
+                    <div class="topic-tag">Social</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Organization:</strong> Government e-Marketplace (GeM).</li>
+                            <li><strong>Achievement:</strong> 7 years completed. Women-led MSEs secured over ₹80,000 crore in orders (4.7% of GeM total).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 26. NCSTC -->
+            <div class="topic-card" data-index="26">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">26</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🔒 NCSTC 2026</div>
+                        <div class="topic-subtitle">National Conference on Strategic Trade Controls — SCOMET regulation</div>
+                    </div>
+                    <div class="topic-tag">Trade</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> National Conference on Strategic Trade Controls 2026.</li>
+                            <li><strong>Organizers:</strong> DGFT and MEA.</li>
+                            <li><strong>Purpose:</strong> Regulating dual-use technology/items (SCOMET) to prevent proliferation while facilitating legitimate trade.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 27. India-Israel -->
+            <div class="topic-card" data-index="27">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">27</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🐟 India-Israel Fisheries</div>
+                        <div class="topic-subtitle">"Sea the Future 2026" — Blue Economy &amp; aquaculture technology</div>
+                    </div>
+                    <div class="topic-tag">Bilateral</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Declaration:</strong> Joint Ministerial Declaration on Fisheries &amp; Aquaculture.</li>
+                            <li><strong>Summit:</strong> "Sea the Future 2026" in Eilat, Israel.</li>
+                            <li><strong>Focus:</strong> Blue Economy and advanced aquaculture technology.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 28. ADGMIN -->
+            <div class="topic-card" data-index="28">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">28</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">💻 ADGMIN</div>
+                        <div class="topic-subtitle">6th ASEAN-India Digital Ministers' Meeting — Connected Intelligence</div>
+                    </div>
+                    <div class="topic-tag">Digital</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> 6th ASEAN-India Digital Ministers' Meeting.</li>
+                            <li><strong>Theme:</strong> "Adaptive ASEAN: From Connectivity to Connected Intelligence".</li>
+                            <li><strong>Outcome:</strong> Approval of ASEAN-India Digital Work Plan 2026.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 29. Republic Day 2026 -->
+            <div class="topic-card" data-index="29">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">29</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇮🇳 Republic Day 2026</div>
+                        <div class="topic-subtitle">150 years of 'Vande Mataram' — EU leaders as Chief Guests</div>
+                    </div>
+                    <div class="topic-tag">National</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Theme:</strong> 150 years of 'Vande Mataram'.</li>
+                            <li><strong>Chief Guests:</strong> President of European Council (Antonio Costa) &amp; President of European Commission (Ursula von der Leyen).</li>
+                            <li><strong>Parade Venue:</strong> Kartavya Path.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 30. Blue Economy -->
+            <div class="topic-card" data-index="30">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">30</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🐠 Blue Economy</div>
+                        <div class="topic-subtitle">India's first open-sea marine fish farming — Andaman Sea</div>
+                    </div>
+                    <div class="topic-tag">Innovation</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Project:</strong> India's First Open-Sea Marine Fish Farming Project.</li>
+                            <li><strong>Location:</strong> North Bay, Andaman Sea.</li>
+                            <li><strong>Ministry:</strong> Ministry of Earth Sciences (MoES).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 31. IICDEM 2026 -->
+            <div class="topic-card" data-index="31">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">31</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🗳️ IICDEM 2026</div>
+                        <div class="topic-subtitle">India International Conference on Democracy &amp; Election Management</div>
+                    </div>
+                    <div class="topic-tag">Governance</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Host:</strong> Election Commission of India (ECI).</li>
+                            <li><strong>Launch:</strong> ECINET — ECI's digital platform for election information.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 32. SKOCH Award -->
+            <div class="topic-card" data-index="32">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">32</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏆 SKOCH Award 2025</div>
+                        <div class="topic-subtitle">C-DOT's Cell Broadcast Solution — disaster alerts without internet</div>
+                    </div>
+                    <div class="topic-tag">Award</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Winner:</strong> C-DOT (Centre for Development of Telematics).</li>
+                            <li><strong>Innovation:</strong> Cell Broadcast Solution (CBS) — disaster alerting platform working without internet, multi-lingual alerts.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 33. Responsible Nations Index -->
+            <div class="topic-card" data-index="33">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">33</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🌐 Responsible Nations Index</div>
+                        <div class="topic-subtitle">India ranks 16 — ethical governance over economic power</div>
+                    </div>
+                    <div class="topic-tag">Global</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Launch:</strong> Released by India (World Intellectual Foundation).</li>
+                            <li><strong>Top Rank:</strong> Singapore (1), Switzerland (2).</li>
+                            <li><strong>India:</strong> Rank 16.</li>
+                            <li><strong>Focus:</strong> Ethical governance and global responsibility rather than just economic power.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 34. India-UAE Relations -->
+            <div class="topic-card" data-index="34">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">34</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇦🇪 India-UAE Relations</div>
+                        <div class="topic-subtitle">$200B trade target by 2032 — IIT Delhi &amp; IIM-A in UAE</div>
+                    </div>
+                    <div class="topic-tag">Bilateral</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Trade:</strong> Target to double bilateral trade to $200 billion by 2032.</li>
+                            <li><strong>Education:</strong> IIT Delhi and IIM Ahmedabad establishing campuses in UAE.</li>
+                            <li><strong>Culture:</strong> 'House of India' to be established in Abu Dhabi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 35. WEF 2026 -->
+            <div class="topic-card" data-index="35">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">35</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏔️ World Economic Forum 2026</div>
+                        <div class="topic-subtitle">Davos — Green Investment Handbook 'The India Story'</div>
+                    </div>
+                    <div class="topic-tag">Global</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Venue:</strong> Davos.</li>
+                            <li><strong>India's Pitch:</strong> Highlighting a "resilient and scalable" energy transition.</li>
+                            <li><strong>Launch:</strong> Green Investment Handbook 'The India Story'.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 36. Index of Eight Core Industries -->
+            <div class="topic-card" data-index="36">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">36</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏭 Eight Core Industries Index</div>
+                        <div class="topic-subtitle">Dec 2025 — Cement +13.5%, Crude Oil -5.6%</div>
+                    </div>
+                    <div class="topic-tag">Economy</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Data:</strong> December 2025.</li>
+                            <li><strong>Top Growth:</strong> Cement (+13.5%).</li>
+                            <li><strong>Decline:</strong> Crude Oil (-5.6%).</li>
+                            <li><strong>Highest Weightage:</strong> Petroleum Refinery Products (28.04%); Lowest: Fertilizers (2.63%).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 37. India-AI Impact Summit -->
+            <div class="topic-card" data-index="37">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">37</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🤖 India-AI Impact Summit 2026</div>
+                        <div class="topic-subtitle">First global AI summit in the Global South — 3 Sutras &amp; 7 Chakras</div>
+                    </div>
+                    <div class="topic-tag">Technology</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Venue:</strong> Bharat Mandapam, New Delhi (Feb 2026).</li>
+                            <li><strong>Theme:</strong> "Welfare for All, Happiness of All".</li>
+                            <li><strong>Significance:</strong> First global AI summit in the Global South.</li>
+                            <li><strong>Framework:</strong> 3 Sutras (People, Planet, Progress) and 7 Chakras.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 38. Mozzarella of Jammu -->
+            <div class="topic-card" data-index="38">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">38</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🧀 Mozzarella of Jammu — Kaladi</div>
+                        <div class="topic-subtitle">Traditional cheese from Udhampur gets GI Tag</div>
+                    </div>
+                    <div class="topic-tag">GI Tag</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Product:</strong> Kaladi (traditional cheese from Udhampur).</li>
+                            <li><strong>Status:</strong> Granted GI Tag.</li>
+                            <li><strong>Context:</strong> GI tags are protected under the WTO TRIPS Agreement.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 39. Zero Fresh Waste -->
+            <div class="topic-card" data-index="39">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">39</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">♻️ Zero Fresh Waste Dump City</div>
+                        <div class="topic-subtitle">Lucknow — UP's first city with 100% scientific waste processing</div>
+                    </div>
+                    <div class="topic-tag">Urban</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>City:</strong> Lucknow, Uttar Pradesh.</li>
+                            <li><strong>Achievement:</strong> UP's first city to achieve 100% scientific processing of municipal solid waste.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 40. MSDE MoU with WEF -->
+            <div class="topic-card" data-index="40">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">40</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🎓 India Skills Accelerator</div>
+                        <div class="topic-subtitle">MSDE-WEF MoU — transforming vocational education (TVET)</div>
+                    </div>
+                    <div class="topic-tag">Education</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Initiative:</strong> Launch of the India Skills Accelerator.</li>
+                            <li><strong>Goal:</strong> Transforming Technical and Vocational Education and Training (TVET).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 41. SVAMITVA -->
+            <div class="topic-card" data-index="41">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">41</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏘️ SVAMITVA</div>
+                        <div class="topic-subtitle">Drone-based village mapping for property cards</div>
+                    </div>
+                    <div class="topic-tag">Rural</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Scheme:</strong> Survey of Villages and Mapping with Improvised Technology.</li>
+                            <li><strong>Feature:</strong> Use of drones to map village abadi areas and issue Property Cards.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 42. Military Quantum Mission -->
+            <div class="topic-card" data-index="42">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">42</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">⚛️ Military Quantum Mission</div>
+                        <div class="topic-subtitle">Quantum computing, communication &amp; sensing for armed forces</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Policy:</strong> Released by CDS Gen Anil Chauhan.</li>
+                            <li><strong>Aim:</strong> Integrating quantum technologies (computing, communication, sensing) into the Indian Armed Forces.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 43. Parakram Diwas -->
+            <div class="topic-card" data-index="43">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">43</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇮🇳 Parakram Diwas 2026</div>
+                        <div class="topic-subtitle">129th Birth Anniversary of Netaji Subhas Chandra Bose</div>
+                    </div>
+                    <div class="topic-tag">National</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Occasion:</strong> 129th Birth Anniversary of Netaji Subhas Chandra Bose.</li>
+                            <li><strong>Venue:</strong> Sri Vijaya Puram, A&amp;N Islands.</li>
+                            <li><strong>Historical Notes:</strong> Netaji formed the Azad Hind Government (1943) and INA; resigned from ICS in 1921.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 44. Granth Kutir -->
+            <div class="topic-card" data-index="44">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">44</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">📚 Granth Kutir</div>
+                        <div class="topic-subtitle">2,300 books &amp; manuscripts in 11 classical languages at Rashtrapati Bhavan</div>
+                    </div>
+                    <div class="topic-tag">Culture</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Inauguration:</strong> By the President at Rashtrapati Bhavan.</li>
+                            <li><strong>What is it:</strong> A library/repository of 2,300 books and manuscripts in 11 classical languages of India.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 45. Gulfood 2026 -->
+            <div class="topic-card" data-index="45">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">45</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🍽️ Gulfood 2026</div>
+                        <div class="topic-subtitle">India as Partner Country (first time) — BHARATI Pavilion in Dubai</div>
+                    </div>
+                    <div class="topic-tag">Trade</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Status:</strong> India is the Partner Country (first time).</li>
+                            <li><strong>Pavilion:</strong> APEDA's BHARATI Pavilion featuring 8 startups.</li>
+                            <li><strong>Venue:</strong> Dubai.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 46. Franz Edelman Award -->
+            <div class="topic-card" data-index="46">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">46</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏅 Franz Edelman Award 2026</div>
+                        <div class="topic-subtitle">"Anna Chakra" — Nobel Prize of Operations Research finalist</div>
+                    </div>
+                    <div class="topic-tag">Award</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Finalist:</strong> Department of Food and Public Distribution (India).</li>
+                            <li><strong>Project:</strong> "Anna Chakra" — Operations Research solution for PDS logistics.</li>
+                            <li><strong>Partners:</strong> WFP and IIT Delhi.</li>
+                            <li><strong>Context:</strong> Known as the "Nobel Prize of Operations Research".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 47. Tri-Services Tableau -->
+            <div class="topic-card" data-index="47">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">47</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🎖️ Tri-Services Tableau</div>
+                        <div class="topic-subtitle">Operation Sindoor: Victory Through Jointness</div>
+                    </div>
+                    <div class="topic-tag">Defence</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Title:</strong> Operation Sindoor: Victory Through Jointness.</li>
+                            <li><strong>Theme:</strong> Showcasing military synergy, M777 howitzers, and Akash Air Defence System.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 48. Aapda Prabandhan Puraskar -->
+            <div class="topic-card" data-index="48">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">48</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🎗️ Aapda Prabandhan Puraskar 2026</div>
+                        <div class="topic-subtitle">Disaster management awards — Wayanad relief &amp; Sikkim SDMA</div>
+                    </div>
+                    <div class="topic-tag">Award</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Individual Award:</strong> Lt. Col. Seeta Ashok Shelke (Indian Army) for Wayanad relief ops.</li>
+                            <li><strong>Institutional Award:</strong> Sikkim State Disaster Management Authority (SSDMA).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 49. Pancham Chatbot -->
+            <div class="topic-card" data-index="49">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">49</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🤖 Pancham Chatbot</div>
+                        <div class="topic-subtitle">Panchayat Assistance Chatbot — collab with UNICEF</div>
+                    </div>
+                    <div class="topic-tag">Digital</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Ministry:</strong> Panchayati Raj.</li>
+                            <li><strong>Type:</strong> Panchayat Assistance and Messaging Chatbot (collaboration with UNICEF).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 50. President's Medal -->
+            <div class="topic-card" data-index="50">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">50</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🎖️ President's Medal</div>
+                        <div class="topic-subtitle">RPF/RPSF personnel — Ms. Aroma Singh Thakur recognized</div>
+                    </div>
+                    <div class="topic-tag">Award</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Recipients:</strong> Railway Protection Force (RPF/RPSF) personnel.</li>
+                            <li><strong>Distinguished Service:</strong> Ms. Aroma Singh Thakur.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 51. MY BHARAT - NSS -->
+            <div class="topic-card" data-index="51">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">51</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇮🇳 MY BHARAT — NSS</div>
+                        <div class="topic-subtitle">Republic Day Camp 2026 — "Not Me, But You"</div>
+                    </div>
+                    <div class="topic-tag">Youth</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> Republic Day Camp 2026.</li>
+                            <li><strong>Motto:</strong> "Not Me, But You".</li>
+                            <li><strong>Organized By:</strong> Ministry of Youth Affairs and Sports.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 52. AYUSHEXCIL MoU -->
+            <div class="topic-card" data-index="52">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">52</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🌿 AYUSHEXCIL × Zepto</div>
+                        <div class="topic-subtitle">Authentic AYUSH products online via dedicated storefront</div>
+                    </div>
+                    <div class="topic-tag">Health</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Partner:</strong> Zepto.</li>
+                            <li><strong>Objective:</strong> To sell authentic, verified AYUSH products online via a dedicated storefront.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 53. Halwa Ceremony -->
+            <div class="topic-card" data-index="53">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">53</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🍮 Halwa Ceremony</div>
+                        <div class="topic-subtitle">Lock-in stage for Union Budget 2026-27 preparation</div>
+                    </div>
+                    <div class="topic-tag">Budget</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Event:</strong> Marks the "lock-in" stage for the preparation of Union Budget 2026-27.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 54. India-EU FTA -->
+            <div class="topic-card" data-index="54">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">54</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🇪🇺 India-EU Free Trade Agreement</div>
+                        <div class="topic-subtitle">"Mother of All Deals" — 99%+ Indian exports get preferential access</div>
+                    </div>
+                    <div class="topic-tag">Trade</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Status:</strong> Concluded ("Mother of All Deals").</li>
+                            <li><strong>Impact:</strong> Over 99% of Indian exports gain preferential market access to the EU.</li>
+                            <li><strong>Trade Volume:</strong> Combined trade in goods and services ~USD 219 billion.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 55. Republic Day Awards -->
+            <div class="topic-card" data-index="55">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">55</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🏅 Republic Day Awards</div>
+                        <div class="topic-subtitle">Best marching contingents, tableaux &amp; ministry awards</div>
+                    </div>
+                    <div class="topic-tag">National</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Best Marching (Services):</strong> Indian Navy.</li>
+                            <li><strong>Best Marching (CAPF):</strong> Delhi Police.</li>
+                        </ul>
+
+                        <div class="subtopic">
+                            <div class="subtopic-header" onclick="toggleSubtopic(this)">
+                                <div class="subtopic-dot"></div>
+                                Best Tableaux (States)
+                                <span class="subtopic-chevron">▾</span>
+                            </div>
+                            <div class="subtopic-content">
+                                <div class="subtopic-content-inner">
+                                    <ul>
+                                        <li><strong>1st:</strong> Maharashtra (Ganeshotsav).</li>
+                                        <li><strong>2nd:</strong> Jammu &amp; Kashmir.</li>
+                                        <li><strong>3rd:</strong> Kerala.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul style="margin-top: 12px;">
+                            <li><strong>Best Ministry Tableau:</strong> Ministry of Culture (Vande Mataram).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 56. Sampoornata Abhiyan 2.0 -->
+            <div class="topic-card" data-index="56">
+                <div class="topic-header" onclick="toggleCard(this)">
+                    <div class="topic-num">56</div>
+                    <div class="topic-title-group">
+                        <div class="topic-title">🎯 Sampoornata Abhiyan 2.0</div>
+                        <div class="topic-subtitle">NITI Aayog — 3-month saturation campaign for aspirational districts</div>
+                    </div>
+                    <div class="topic-tag">Governance</div>
+                    <div class="topic-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </div>
+                <div class="topic-content">
+                    <div class="topic-content-inner">
+                        <ul>
+                            <li><strong>Agency:</strong> NITI Aayog.</li>
+                            <li><strong>Duration:</strong> 3-month campaign (Jan 28 – Apr 14, 2026).</li>
+                            <li><strong>Goal:</strong> Saturation of indicators in 112 Aspirational Districts and 513 Aspirational Blocks.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end topicList -->
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Built for UPSC Aspirants with ❤︎<br>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('pib-theme', next);
+        }
+
+        // Load saved theme
+        (function() {
+            const saved = localStorage.getItem('pib-theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        })();
+
+        // Toggle Topic Card
+                function toggleCard(header) {
+            const card = header.closest('.topic-card');
+            const content = card.querySelector('.topic-content');
+
+            if (card.classList.contains('open')) {
+                content.style.maxHeight = null;
+                card.classList.remove('open');
+                // Close all subtopics inside
+                card.querySelectorAll('.subtopic.open').forEach(sub => {
+                    sub.classList.remove('open');
+                    sub.querySelector('.subtopic-content').style.maxHeight = null;
+                });
+            } else {
+                content.style.maxHeight = 'none';
+                card.classList.add('open');
+            }
+        }
+
+
+                // Toggle Subtopic
+        function toggleSubtopic(header) {
+            const sub = header.closest('.subtopic');
+            const content = sub.querySelector('.subtopic-content');
+
+            if (sub.classList.contains('open')) {
+                content.style.maxHeight = null;
+                sub.classList.remove('open');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                sub.classList.add('open');
+            }
+
+            // Re-adjust ALL ancestor containers
+            let parent = sub.closest('.topic-content');
+            if (parent) {
+                setTimeout(() => {
+                    parent.style.maxHeight = 'none';
+                }, 10);
+            }
+        }
+
+
+        // Expand/Collapse All
+        let allExpanded = false;
+        function toggleAll() {
+            const cards = document.querySelectorAll('.topic-card');
+            const btn = document.getElementById('expandAllBtn');
+
+            allExpanded = !allExpanded;
+
+            cards.forEach(card => {
+                const content = card.querySelector('.topic-content');
+                if (allExpanded) {
+                    card.classList.add('open');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    card.classList.remove('open');
+                    content.style.maxHeight = null;
+                    // Also close subtopics
+                    card.querySelectorAll('.subtopic.open').forEach(sub => {
+                        sub.classList.remove('open');
+                        sub.querySelector('.subtopic-content').style.maxHeight = null;
+                    });
+                }
+            });
+
+            btn.textContent = allExpanded ? 'Collapse All' : 'Expand All';
+        }
+
+        // Year Switcher
+        function switchYear(year) {
+            // Hide all panels
+            document.querySelectorAll('.year-panel').forEach(p => {
+                p.classList.remove('visible');
+            });
+            // Deactivate all year buttons
+            document.querySelectorAll('.year-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            // Show selected panel
+            document.getElementById('year-' + year).classList.add('visible');
+            // Activate clicked button
+            event.target.classList.add('active');
+        }
+
+        // Search
+        function searchTopics() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.topic-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (query === '' || text.includes(query)) {
+                    card.classList.remove('hidden');
+                    card.style.display = '';
+                } else {
+                    card.classList.add('hidden');
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

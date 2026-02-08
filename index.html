@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Current Affairs & Study Portal | UPSC • CAPF • CDS • EPFO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f6f7f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      padding: 18px;
+      margin: 14px 0;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      text-align: left;
+      color: #000;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: #f5c32c;
+      background: #fffbe8;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .active {
+      border-left: 6px solid #f5c32c;
+    }
+
+    .soon {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Current Affairs & Study Portal</h1>
+    <p>
+      Exam-oriented preparation platform for <b>UPSC CSE, CAPF, CDS & EPFO</b>.<br>
+      Structured notes • Monthly updates • Concept clarity.
+    </p>
+
+    <!-- PIB NOTES -->
+    <a href="pib.html" class="card active">
+      <div class="card-title">PIB Notes</div>
+      <div class="card-desc">
+        Monthly PIB compilations with complete fact coverage (Prelims + Mains).
+      </div>
+    </a>
+
+    <!-- MONTHLY CA -->
+    <div class="card soon">
+      <div class="card-title">Monthly Current Affairs</div>
+      <div class="card-desc">
+        All-source monthly CA (PIB + others). Coming soon.
+      </div>
+    </div>
+
+    <!-- STUDY MATERIAL -->
+    <div class="card soon">
+      <div class="card-title">Study Materials</div>
+      <div class="card-desc">
+        Polity, Economy, Environment & Static notes. Coming soon.
+      </div>
+    </div>
+
+    <div class="footer">
+      Designed for serious aspirants • No distractions
+    </div>
+  </div>
+
+</body>
+</html>
